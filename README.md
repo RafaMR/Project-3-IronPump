@@ -1,17 +1,27 @@
 ## Pages
 
-Home - / - Display exercise list and premade workouts
+Home - / - Display exercise list and premade workouts.
+
 Register - /register - Allow visitor to create account with name, email, password and profile picture.
+
 Log In - /log-in - Allows existing user to log-in.
+
 Profile Search - /profile/search - Search for users.
+
 Profile Edit - /profile/edit - Allows authenticated user to edit their profile.
+
 Profile - /profile/:id - Visualize users' profile and show last 3 training routines made.
 
 Exercise Search - /exercise/search - Search for exercises.
+
 Exercise Detail - /exercise/:id - Visualize single exercise details.
+
 Workout Search - /workout/search - Search for exercises.
+
 Workout Detail - /workout/:id - Visualize single workout details.
+
 Workout Add - /workout/add - Allows user to post workout.
+
 Workout Edit - /workout/:id/edit - Allows user to post workout.
 
 ## Services
