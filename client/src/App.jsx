@@ -8,13 +8,23 @@ import LogInPage from './pages/LogInPage';
 import Navbar from './components/Navbar';
 import AuthenticationContext from './context/authentication';
 import { loadUserInformation } from './services/authentication';
+import { getAllExercises } from './api';
+import ExercisesList from './components/ExercisesList';
 
 const App = () => {
+  const [exercises, setExercises] = useState([]);
+
   const [user, setUser] = useState(null);
 
   useEffect(() => {
     loadUserInformation().then((data) => {
       setUser(data.user);
+    });
+  }, []);
+
+  useEffect(() => {
+    getAllExercises().then((res) => {
+      setExercises(res);
     });
   }, []);
 
@@ -28,6 +38,7 @@ const App = () => {
           <Route path="/log-in" element={<LogInPage />} />
         </Routes>
       </BrowserRouter>
+      {/* <ExercisesList exercises={exercises} /> */}
     </AuthenticationContext.Provider>
   );
 };
