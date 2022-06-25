@@ -8,7 +8,7 @@ import LogInPage from './pages/LogInPage';
 import Navbar from './components/Navbar';
 import AuthenticationContext from './context/authentication';
 import { loadUserInformation } from './services/authentication';
-import { getAllExercises } from './api';
+import { getAllExercises } from './services/api';
 import ExercisesList from './components/ExercisesList';
 
 const App = () => {

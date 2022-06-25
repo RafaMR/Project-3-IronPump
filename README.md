@@ -20,7 +20,7 @@ Workout Search - /workout/search - Search for exercises.
 
 Workout Detail - /workout/:id - Visualize single workout details.
 
-Workout Add - /workout/add - Allows user to post workout.
+Workout Add - /workout/add - Allows user to post workout. (should list all exercises and allow user to select which exercises go into the new workout)
 
 Workout Edit - /workout/:id/edit - Allows user to post workout.
 
@@ -61,18 +61,27 @@ workoutDelete - issues DELETE to '/workout/:id' - Allows user to delete workout.
 
 User
 
-name: String, required, trim
-email: String, required, trim, lowercase
-passwordHashAndSalt: String, required
-picture: String
+name: String, required, trim.
+email: String, required, trim, lowercase.
+passwordHashAndSalt: String, required.
+picture: String.
 
-Exercises
+Exercise
 
 name: String, required,
+...other properties of exercise objects execpt id
 
 Workout
 
-exercise: ObjectId, ref: 'Exercises', required
+name: String, required
+description: String
+creator: ObjectId, ref: 'User', required
+exercises: Array of ObjectId, ref: 'Exercise', required
+sets: [{
+exercise: ObjectId, ref: 'Exercise', required
+repetitions: Number
+weight: Number
+}]
 
 ## Request Handlers
 
@@ -92,11 +101,13 @@ GET - '/profile/:id' - Loads single users profile.
 
 PATCH - '/profile' - Edit authenticated users profile.
 
+GET - '/exercise/list' - Allows user to search for exercises.
+
+GET - '/exercise/:id' - Loads single exercise.
+
 GET - '/exercise/search' - Allows user to search for exercises.
 
 GET - '/workout/search' - Allows user to search for workouts.
-
-GET - '/exercise/:id' - Loads single exercise.
 
 GET - '/workout/:id' - Loads single workout.
 

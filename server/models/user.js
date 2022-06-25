@@ -15,7 +15,13 @@ const schema = new mongoose.Schema({
   },
   passwordHashAndSalt: {
     type: String
-  }
+  },
+  workouts: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Workout'
+    }
+  ]
 });
 
 const User = mongoose.model('User', schema);

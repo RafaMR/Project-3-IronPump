@@ -6,6 +6,7 @@ dotenv.config();
 const debug = require('debug')('ironpump-server:server');
 const app = require('./app');
 const mongoose = require('mongoose');
+const seedExerciseCollectionIfNeeded = require('./seed-exercise-collection');
 
 const PORT = Number(process.env.PORT, 10);
 const MONGODB_URI = process.env.MONGODB_URI;
@@ -62,6 +63,9 @@ mongoose
   .connect(MONGODB_URI)
   .then(() => {
     debug(`Database connected to URI "${MONGODB_URI}"`);
+    return seedExerciseCollectionIfNeeded();
+  })
+  .then(() => {
     initiate();
   })
   .catch((error) => {
