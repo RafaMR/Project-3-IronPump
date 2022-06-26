@@ -14,6 +14,7 @@ const RegisterPage = () => {
   const handleRegistration = (event) => {
     event.preventDefault();
     registerUser({ name, email, password }).then((data) => {
+      //console.log(data);
       setUser(data.user);
       navigate('/');
     });
