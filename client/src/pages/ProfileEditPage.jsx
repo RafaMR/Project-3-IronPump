@@ -1,38 +1,43 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AuthenticationForm from '../components/AuthenticationForm';
 import AuthenticationContext from '../context/authentication';
-import { registerUser } from '../services/authentication';
+import { profileLoad, profileEdit } from '../services/profile';
 
-const RegisterPage = () => {
+const ProfileEditPage = () => {
   const navigate = useNavigate();
 
-  const [user, setUserState] = useState({
-    name: '',
-    email: '',
-    password: '',
-    picture: ''
-  });
+  const [profile, setProfile] = useState(null);
 
-  const { setUser } = useContext(AuthenticationContext);
+  const { user, setUser } = useContext(AuthenticationContext);
 
-  const handleRegistration = () => {
-    registerUser(user).then((data) => {
-      setUser(data.user);
+  useEffect(() => {
+    if (user) {
+      profileLoad(user._id).then((data) => {
+        setProfile(data.profile);
+      });
+    }
+  }, [user]);
+
+  const handleProfileEdit = (event) => {
+    profileEdit(profile).then((data) => {
+      setUser(data.profile);
       navigate('/');
     });
   };
 
   return (
     <div>
-      <h1>Register New Account</h1>
-      <AuthenticationForm
-        user={user}
-        displayInputs={['name', 'email', 'password', 'picture']}
-        onUserChange={setUserState}
-        onAuthenticationSubmit={handleRegistration}
-        buttonLabel="Register New Account"
-      />
+      <h1>Edit your profile</h1>
+      {profile && (
+        <AuthenticationForm
+          user={profile}
+          buttonLabel="Edit our profile"
+          displayInputs={['name', 'email', 'picture']}
+          onUserChange={setProfile}
+          onAuthenticationSubmit={handleProfileEdit}
+        />
+      )}
     </div>
     //This code is inside AuthenticationForm Component
     //<form onSubmit={handleRegistration}>
@@ -64,4 +69,4 @@ const RegisterPage = () => {
   );
 };
 
-export default RegisterPage;
+export default ProfileEditPage;

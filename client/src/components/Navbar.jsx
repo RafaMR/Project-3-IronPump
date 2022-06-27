@@ -20,6 +20,9 @@ const Navbar = () => {
         <>
           <span>Welcome {user.name}</span>
           <button onClick={handleSignOut}>Sign Out</button>
+          <Link className="btn" to={`/profile/${user._id}`}>
+            {user.name}Profile
+          </Link>
         </>
       )) || (
         <>
