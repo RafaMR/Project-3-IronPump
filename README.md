@@ -8,9 +8,9 @@ Log In - /log-in - Allows existing user to log-in. ✅
 
 Profile Search - /profile/search - Search for users. ✅
 
-Profile Edit - /profile/edit - Allows authenticated user to edit their profile.
+Profile Edit - /profile/edit - Allows authenticated user to edit their profile.✅
 
-Profile - /profile/:id - Visualize users' profile and show last 3 training routines made.
+Profile - /profile/:id - Visualize users' profile and show last 3 training routines made.✅
 
 Exercise Search - /exercise/search - Search for exercises.
 
@@ -106,9 +106,9 @@ GET - '/authentication/me' - Loads information about authenticated user. ✅
 
 GET - '/profile/search' - Allows user to search for other user profiles. ✅
 
-GET - '/profile/:id' - Loads single users profile.
+GET - '/profile/:id' - Loads single users profile.✅
 
-PATCH - '/profile' - Edit authenticated users profile.
+PATCH - '/profile' - Edit authenticated users profile.✅
 
 GET - '/exercise/list' - Allows user to search for exercises. ✅
 
