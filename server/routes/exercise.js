@@ -33,4 +33,11 @@ router.get('/body-parts', (req, res, next) => {
   res.json({ bodyParts: bodyPartList });
 });
 
+router.get('/:partName', (req, res, next) => {
+  const { partName } = req.params;
+  Exercise.find({ bodyPart: partName }, (exercises) => {
+    res.json({ exercises });
+  });
+});
+
 module.exports = router;
