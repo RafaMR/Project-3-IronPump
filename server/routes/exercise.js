@@ -18,7 +18,7 @@ router.get('/search', (req, res, next) => {
 
 router.get('/list', (req, res, next) => {
   Exercise.find((exercises) => {
-    res.json({ exercises });
+    res.json({ exercises: exerciseList });
   });
 });
 

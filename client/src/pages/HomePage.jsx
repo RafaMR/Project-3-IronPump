@@ -1,22 +1,39 @@
-import { exerciseList } from '../services/exercise';
+import { exerciseList, bodyPartList } from '../services/exercise';
 import { useEffect, useState } from 'react';
 
 const HomePage = () => {
-  const [exercise, setExercise] = useState(null);
+  const [bodyParts, setBodyPart] = useState([]);
 
   useEffect(() => {
-    exerciseList().then((data) => setExercise(data.exercises));
-  }, []);
+    bodyPartList().then((data) => setBodyPart(data.name));
+  }, [bodyParts]);
 
   return (
     <div>
-      {exercise.map((exercise) => (
-        <ul>
-          <li>{exercise.name}</li>
-        </ul>
-      ))}
+      <h1> Hola esto es un test</h1>
+      {bodyParts &&
+        bodyParts.map((part) => (
+          <ul>
+            <li key={part.name}>{part.name}</li>
+          </ul>
+        ))}
     </div>
   );
 };
 
 export default HomePage;
+
+// const [exercises, setExercises] = useState();
+
+// useEffect(() => {
+//   exerciseList().then((data) => setExercises(data.exercises));
+// }, [exercises]);
+
+{
+  /* {exercises &&
+    exercises.map((exercise) => (
+      <ul>
+        <li key={exercise.id}>{exercise.name}</li>
+      </ul>
+  ))} */
+}

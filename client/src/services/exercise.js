@@ -1,4 +1,4 @@
-import apiAuthentication from './authentication';
+import { apiAuthentication } from './authentication';
 
 export const exerciseSearch = (filters) =>
   apiAuthentication

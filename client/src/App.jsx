@@ -15,7 +15,7 @@ import { getAllExercises } from './services/api';
 import ExercisesList from './components/ExercisesList';
 
 const App = () => {
-  const [exercises, setExercises] = useState([]);
+  //const [exercises, setExercises] = useState([]);
 
   const [user, setUser] = useState(null);
 
@@ -25,11 +25,11 @@ const App = () => {
     });
   }, []);
 
-  useEffect(() => {
-    getAllExercises().then((res) => {
-      setExercises(res);
-    });
-  }, []);
+  ///useEffect(() => {
+  ///  getAllExercises().then((res) => {
+  ///    setExercises(res);
+  ///  });
+  ///}, []);
 
   return (
     <AuthenticationContext.Provider value={{ user, setUser }}>
