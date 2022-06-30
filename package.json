@@ -1,0 +1,8 @@
+{
+  "name": "ironpump",
+  "version": "0.0.1",
+  "script": {
+    "start": "cd server && npm start",
+    "prepare": "cd server && npm i"
+  }
+}
