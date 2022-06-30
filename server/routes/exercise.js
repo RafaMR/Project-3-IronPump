@@ -22,21 +22,21 @@ router.get('/list', (req, res, next) => {
   });
 });
 
-router.get('/:id', (req, res, next) => {
-  const { id } = req.params;
-  Exercise.findById(id, (exercise) => {
-    res.json({ exercise });
-  });
-});
-
 router.get('/body-parts', (req, res, next) => {
   res.json({ bodyParts: bodyPartList });
 });
 
-router.get('/:partName', (req, res, next) => {
+router.get('/part/:partName', (req, res, next) => {
   const { partName } = req.params;
   Exercise.find({ bodyPart: partName }, (exercises) => {
     res.json({ exercises });
+  });
+});
+
+router.get('/id/:id', (req, res, next) => {
+  const { id } = req.params;
+  Exercise.findById(id, (exercise) => {
+    res.json({ exercise });
   });
 });
 

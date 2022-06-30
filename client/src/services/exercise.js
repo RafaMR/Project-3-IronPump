@@ -8,9 +8,6 @@ export const exerciseSearch = (filters) =>
 export const exerciseList = () =>
   apiAuthentication.get('/exercise/list').then((response) => response.data);
 
-export const singleExercise = (id) =>
-  apiAuthentication.get(`/exercise/${id}`).then((response) => response.data);
-
 export const bodyPartList = () =>
   apiAuthentication
     .get('/exercise/body-parts')
@@ -18,5 +15,8 @@ export const bodyPartList = () =>
 
 export const exercisesByBodyPart = (partName) =>
   apiAuthentication
-    .get(`/exercise/${partName}`)
+    .get(`/exercise/part/${partName}`)
     .then((response) => response.data);
+
+export const singleExercise = (id) =>
+  apiAuthentication.get(`/exercise/id/${id}`).then((response) => response.data);

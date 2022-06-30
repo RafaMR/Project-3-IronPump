@@ -5,16 +5,18 @@ const HomePage = () => {
   const [bodyParts, setBodyPart] = useState([]);
 
   useEffect(() => {
-    bodyPartList().then((data) => setBodyPart(data.name));
-  }, [bodyParts]);
+    bodyPartList().then((data) => {
+      setBodyPart(data.bodyParts);
+    });
+  }, []);
 
   return (
     <div>
       <h1> Hola esto es un test</h1>
       {bodyParts &&
         bodyParts.map((part) => (
-          <ul>
-            <li key={part.name}>{part.name}</li>
+          <ul key={part.name}>
+            <li>{part.name}</li>
           </ul>
         ))}
     </div>
@@ -29,11 +31,11 @@ export default HomePage;
 //   exerciseList().then((data) => setExercises(data.exercises));
 // }, [exercises]);
 
-{
-  /* {exercises &&
-    exercises.map((exercise) => (
-      <ul>
-        <li key={exercise.id}>{exercise.name}</li>
-      </ul>
-  ))} */
-}
+// {
+//   /* {exercises &&
+//     exercises.map((exercise) => (
+//       <ul>
+//         <li key={exercise.id}>{exercise.name}</li>
+//       </ul>
+//   ))} */
+// }

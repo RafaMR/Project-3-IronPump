@@ -13,6 +13,7 @@ import AuthenticationContext from './context/authentication';
 import { loadUserInformation } from './services/authentication';
 import { getAllExercises } from './services/api';
 import ExercisesList from './components/ExercisesList';
+import BodyPartPage from './pages/BodyPartPage';
 
 const App = () => {
   //const [exercises, setExercises] = useState([]);
@@ -37,6 +38,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/exercise/part/:partName" element={<BodyPartPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/log-in" element={<LogInPage />} />
           <Route path="/profile/search" element={<ProfileSearchPage />} />
