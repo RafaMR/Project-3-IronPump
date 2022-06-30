@@ -19,6 +19,10 @@ const schema = new mongoose.Schema({
     type: String,
     trim: true
   },
+  // id: {
+  //   type: String,
+  //   trim: true
+  // },
   equipment: {
     type: String,
     trim: true

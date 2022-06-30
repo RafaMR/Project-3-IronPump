@@ -14,6 +14,7 @@ import { loadUserInformation } from './services/authentication';
 import { getAllExercises } from './services/api';
 import ExercisesList from './components/ExercisesList';
 import BodyPartPage from './pages/BodyPartPage';
+import SingleExercisePage from './pages/SingleExercisePage';
 
 const App = () => {
   //const [exercises, setExercises] = useState([]);
@@ -39,6 +40,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/exercise/part/:partName" element={<BodyPartPage />} />
+          <Route path="/exercise/id/:id" element={<SingleExercisePage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/log-in" element={<LogInPage />} />
           <Route path="/profile/search" element={<ProfileSearchPage />} />

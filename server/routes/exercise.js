@@ -28,15 +28,17 @@ router.get('/body-parts', (req, res, next) => {
 
 router.get('/part/:partName', (req, res, next) => {
   const { partName } = req.params;
-  Exercise.find({ bodyPart: partName }, (exercises) => {
+  Exercise.find({ bodyPart: partName }).then((exercises) => {
     res.json({ exercises });
+    console.log(exercises);
   });
 });
 
 router.get('/id/:id', (req, res, next) => {
   const { id } = req.params;
-  Exercise.findById(id, (exercise) => {
+  Exercise.findById(id).then((exercise) => {
     res.json({ exercise });
+    console.log(exercise);
   });
 });
 
