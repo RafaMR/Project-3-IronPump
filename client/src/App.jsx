@@ -11,10 +11,11 @@ import ProfileEditPage from './pages/ProfileEditPage';
 import Navbar from './components/Navbar';
 import AuthenticationContext from './context/authentication';
 import { loadUserInformation } from './services/authentication';
-import { getAllExercises } from './services/api';
-import ExercisesList from './components/ExercisesList';
+//import { getAllExercises } from './services/api';
+//import ExercisesList from './components/ExercisesList';
 import BodyPartPage from './pages/BodyPartPage';
 import SingleExercisePage from './pages/SingleExercisePage';
+import WorkoutAddPage from './pages/WorkoutAddPage';
 
 const App = () => {
   //const [exercises, setExercises] = useState([]);
@@ -46,6 +47,7 @@ const App = () => {
           <Route path="/profile/search" element={<ProfileSearchPage />} />
           <Route path="/profile/edit" element={<ProfileEditPage />} />
           <Route path="/profile/:id" element={<ProfilePage />} />
+          <Route path="/workout" element={<WorkoutAddPage />} />
         </Routes>
       </BrowserRouter>
       {/* <ExercisesList exercises={exercises} /> */}

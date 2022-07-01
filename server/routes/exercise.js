@@ -28,10 +28,12 @@ router.get('/body-parts', (req, res, next) => {
 
 router.get('/part/:partName', (req, res, next) => {
   const { partName } = req.params;
-  Exercise.find({ bodyPart: partName }).then((exercises) => {
-    res.json({ exercises });
-    console.log(exercises);
-  });
+  Exercise.find({ bodyPart: partName })
+    .limit(10)
+    .then((exercises) => {
+      res.json({ exercises });
+      console.log(exercises);
+    });
 });
 
 router.get('/id/:id', (req, res, next) => {
