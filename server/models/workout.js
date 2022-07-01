@@ -9,14 +9,15 @@ const schema = new mongoose.Schema({
       ref: 'Exercise'
     }
   ],
-  user: {
+  owner: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'User',
+    required: true
   },
   sets: [
     {
       exercise: {
-        type: ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Exercise',
         required: true
       },

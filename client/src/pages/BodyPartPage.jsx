@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { exercisesByBodyPart } from '../services/exercise';
 
 const BodyPartPage = () => {
@@ -14,14 +14,30 @@ const BodyPartPage = () => {
     });
   }, [partName]);
 
+  //   return (
+  //     <div>
+  //       {part &&
+  //         part.map((exercises, index) => (
+  //           <ul key={index}>
+  //             <li>{exercises.name}</li>
+  //           </ul>
+  //         ))}
+  //     </div>
+  //   );
+  // };
+
   return (
     <div>
+      <h1>{partName}</h1>
       {part &&
-        part.map((exercises, index) => (
-          <ul key={index}>
-            <li>{exercises.name}</li>
-          </ul>
-        ))}
+        part.map((exercises, index) => {
+          return (
+            <Link key={index} to={`/exercise/id/${exercises.id}`}>
+              <li>{exercises.name}</li>
+              <img src={exercises.gifUrl} alt={exercises.name} />
+            </Link>
+          );
+        })}
     </div>
   );
 };

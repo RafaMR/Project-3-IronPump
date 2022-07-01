@@ -1,6 +1,6 @@
 ## Pages
 
-Home - / - Display exercise list and premade workouts.
+Home - / - Display body parts list and premade workouts.✅
 
 Register - /register - Allow visitor to create account with name, email, password and profile picture. ✅
 
@@ -12,9 +12,11 @@ Profile Edit - /profile/edit - Allows authenticated user to edit their profile.�
 
 Profile - /profile/:id - Visualize users' profile and show last 3 training routines made.✅
 
+Body Part Page - /exercise/part/:partName - Visualize list exercises from a body part. ✅
+
 Exercise Search - /exercise/search - Search for exercises.
 
-Exercise Detail - /exercise/:id - Visualize single exercise details.
+Single Exercise Page - /exercise/id/:id - Visualize single exercise details.
 
 Workout Search - /workout/search - Search for exercises.
 
@@ -26,7 +28,7 @@ Workout Edit - /workout/:id/edit - Allows user to post workout.
 
 ## Services
 
-listHomeData - issues GET to '/' - Lists exercises and routines. ({ exercises: [] }).
+listHomeData - issues GET to '/' - Lists body parts and routines. ({ exercises: [] }).
 
 registerUser - issues POST to '/authentication/sign-up' - Registers new user. ✅
 
@@ -42,9 +44,15 @@ profileLoad - issues GET to '/profile/:id' - Loads single users profile. ✅
 
 profileEdit - issues PATCH to '/profile' - Edit authenticated users profile. ✅
 
-exerciseSearch - issues GET to '/exercise/search' - Allows user to search for exercises.✅
+exerciseSearch - issues GET to '/exercise/search' - Allows user to search for exercises.✅ (NOT USED YET)
 
-exerciseLoad - issues GET to '/exercise/:id' - Loads single exercise
+exerciseList - issues GET to '/exercise/list' - Loads list of all exercises ✅ (NOT USED YET)
+
+bodyPartList - issues GET to '/exercise/body-parts' -Loads lits body part. ✅
+
+exercisesByBodyPart - issues GET to '/exercise/part/partName' - Loads exercises from a body part. ✅
+
+singleExercise - issues GET to '/exercise/id/:id' - Loads siingle exercise.
 
 workoutSearch - issues GET to '/workout/search' - Allows user to search for workouts.
 
@@ -52,7 +60,7 @@ workoutLoad - issues GET to '/workout/:id' - Loads single workout.
 
 workoutEdit - issues PATCH to '/workout/:id' - Allows user to edit workout created by them. Authenticated usesr.
 
-workoutAdd - issues POST to '/workout' - Allows user to create workout.
+workoutAdd - issues POST to '/workout' - Allows user to add workout.
 
 workoutDelete - issues DELETE to '/workout/:id' - Allows user to delete workout.
 
@@ -78,13 +86,9 @@ name: String, required.
 
 Workout ✅
 
-name: String, required.
-
-description: String.
-
-creator: ObjectId, ref: 'User', required.
-
 exercises: Array of ObjectId, ref: 'Exercise', required.
+
+owner: ObjectId, ref: 'User'
 
 sets: [{
 exercise: ObjectId, ref: 'Exercise', required
@@ -110,13 +114,15 @@ GET - '/profile/:id' - Loads single users profile.✅
 
 PATCH - '/profile' - Edit authenticated users profile.✅
 
-GET - '/exercise/list' - Allows user to search for exercises. ✅
-
-GET - '/exercise/:id' - Loads single exercise. ✅
-
 GET - '/exercise/search' - Allows user to search for exercises. ✅
 
-GET - '/exercise/body-parts' - Allows user to search for exercises based on body parts. ✅ Extra added by Ze ??
+GET - '/exercise/list' - Lists all exercises. ✅
+
+GET - '/exercise/body-parts' - Loads list body parts. ✅
+
+GET - '/exercise/part/:partName - List exercises from a body part. ✅
+
+GET - '/exercise/id/:id' - Loads single exercise. ✅
 
 GET - '/workout/search' - Allows user to search for workouts.
 

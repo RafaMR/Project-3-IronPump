@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.scss';
 import AuthenticationContext from '../context/authentication';
@@ -23,6 +23,7 @@ const Navbar = () => {
           <Link className="btn" to={`/profile/${user._id}`}>
             {user.name}Profile
           </Link>
+          <Link to={`/profile/search`}>Search for an user Profile</Link>
         </>
       )) || (
         <>
