@@ -3,6 +3,25 @@
 const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  bodyPart: {
+    type: String,
+    enum: [
+      'back',
+      'cardio',
+      'chest',
+      'lower arms',
+      'lower legs',
+      'neck',
+      'shoulders',
+      'upper arms',
+      'upper legs',
+      'waist'
+    ]
+  },
   exercises: [
     {
       type: mongoose.Schema.Types.ObjectId,
@@ -14,17 +33,9 @@ const schema = new mongoose.Schema({
     ref: 'User',
     required: true
   },
-  sets: [
-    {
-      exercise: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Exercise',
-        required: true
-      },
-      repetitions: { type: Number },
-      weight: { type: Number }
-    }
-  ]
+  sets: { type: Number },
+  repetitions: { type: Number },
+  weight: { type: Number }
 });
 
 const Workout = mongoose.model('Workout', schema);

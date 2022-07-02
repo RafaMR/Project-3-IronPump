@@ -4,5 +4,8 @@
   "script": {
     "start": "cd server && npm start",
     "prepare": "cd server && npm i"
+  },
+  "dependencies": {
+    "react-dropdown": "^1.10.0"
   }
 }

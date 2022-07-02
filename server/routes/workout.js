@@ -18,6 +18,17 @@ router.get('/search', routeGuard, (req, res) => {
     });
 });
 
+// GET - '/workout/all' - Loads all available workouts.
+router.get('/all', (req, res, next) => {
+  Workout.find()
+    .then((workouts) => {
+      res.json({ workouts });
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
+
 // GET - '/workout/:id' - Loads single workout.
 
 router.get('/:id', (req, res, next) => {

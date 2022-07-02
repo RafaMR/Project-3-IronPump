@@ -7,6 +7,11 @@ export const workoutSearch = (filters) =>
     .get(`/workout/search?${new URLSearchParams(filters).toString()}`)
     .then((response) => response.data);
 
+//workoutsAll - GET to '/workout/all' - Loads all workouts available.
+
+export const workoutsAll = () =>
+  apiAuthentication.get('workout/all').then((response) => response.data);
+
 //workoutLoad -  GET to '/workout/:id' - Loads single workout.
 
 export const workoutLoad = (id) =>

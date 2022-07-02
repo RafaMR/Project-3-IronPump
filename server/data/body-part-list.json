@@ -1,12 +1,42 @@
 [
-  { "name": "back" },
-  { "name": "cardio" },
-  { "name": "chest" },
-  { "name": "lower arms" },
-  { "name": "lower legs" },
-  { "name": "neck" },
-  { "name": "shoulders" },
-  { "name": "upper arms" },
-  { "name": "upper legs" },
-  { "name": "waist" }
+  {
+    "name": "back",
+    "image": "https://images.pexels.com/photos/1552106/pexels-photo-1552106.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  {
+    "name": "cardio",
+    "image": "https://images.pexels.com/photos/1390403/pexels-photo-1390403.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  {
+    "name": "chest",
+    "image": "https://images.pexels.com/photos/116077/pexels-photo-116077.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  {
+    "name": "lower arms",
+    "image": "https://images.pexels.com/photos/1032117/pexels-photo-1032117.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  {
+    "name": "lower legs",
+    "image": "https://images.pexels.com/photos/1032117/pexels-photo-1032117.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  {
+    "name": "neck",
+    "image": "https://images.pexels.com/photos/3757375/pexels-photo-3757375.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  {
+    "name": "shoulders",
+    "image": "https://images.pexels.com/photos/2628215/pexels-photo-2628215.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  {
+    "name": "upper arms",
+    "image": "https://images.pexels.com/photos/2204196/pexels-photo-2204196.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  {
+    "name": "upper legs",
+    "image": "https://images.pexels.com/photos/4662354/pexels-photo-4662354.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  {
+    "name": "waist",
+    "image": "https://images.pexels.com/photos/6999119/pexels-photo-6999119.jpeg?auto=compress&cs=tinysrgb&w=800"
+  }
 ]

@@ -16,6 +16,8 @@ import { loadUserInformation } from './services/authentication';
 import BodyPartPage from './pages/BodyPartPage';
 import SingleExercisePage from './pages/SingleExercisePage';
 import WorkoutAddPage from './pages/WorkoutAddPage';
+import AllWorkoutsPage from './pages/AllWorkoutsPage';
+import WorkoutForm from './components/WorkoutForm';
 
 const App = () => {
   //const [exercises, setExercises] = useState([]);
@@ -48,6 +50,7 @@ const App = () => {
           <Route path="/profile/edit" element={<ProfileEditPage />} />
           <Route path="/profile/:id" element={<ProfilePage />} />
           <Route path="/workout" element={<WorkoutAddPage />} />
+          <Route path="/workout/all" element={<AllWorkoutsPage />} />
         </Routes>
       </BrowserRouter>
       {/* <ExercisesList exercises={exercises} /> */}

@@ -6,6 +6,7 @@ import { useState } from 'react';
 const WorkoutAddPage = () => {
   const [workout, setWorkout] = useState({
     name: '',
+    owner: '',
     bodyPart: '',
     gifUrl: '',
     equipment: '',
