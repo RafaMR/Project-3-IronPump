@@ -72,10 +72,24 @@ router.patch('/:id', routeGuard, (req, res, next) => {
 
 router.post('/', routeGuard, (req, res, next) => {
   const owner = req.user._id;
-  const exercises = req.exercise;
-  const sets = req.sets;
+  const { exercises, name, bodyPart } = req.body;
 
-  Workout.create({ owner, exercises, sets })
+  // exercises is supposed to be an array, where each item represents an object containing: exercise, set and reps
+  /*
+  [
+    {
+      exercise: {
+        name: '',
+        gif: ''
+      },
+      set: 2,
+      repetitions: 2
+    },
+    ...
+  ];
+
+  */
+  Workout.create({ owner, exercises, name, bodyPart })
     .then((workout) => {
       res.json({ workout });
     })

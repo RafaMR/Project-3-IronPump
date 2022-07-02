@@ -24,18 +24,17 @@ const schema = new mongoose.Schema({
   },
   exercises: [
     {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Exercise'
+      exercise: { type: mongoose.Schema.Types.ObjectId, ref: 'Exercise' },
+      sets: { type: Number },
+      repetitions: { type: Number },
+      weight: { type: Number }
     }
   ],
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     required: true
-  },
-  sets: { type: Number },
-  repetitions: { type: Number },
-  weight: { type: Number }
+  }
 });
 
 const Workout = mongoose.model('Workout', schema);

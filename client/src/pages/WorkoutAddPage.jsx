@@ -1,22 +1,34 @@
 import { workoutAdd } from '../services/workout';
 import { useNavigate } from 'react-router-dom';
 import WorkoutForm from '../components/WorkoutForm';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+
+import AuthenticationContext from '../context/authentication';
 
 const WorkoutAddPage = () => {
+  const { user, setUser } = useContext(AuthenticationContext);
   const [workout, setWorkout] = useState({
     name: '',
     owner: '',
     bodyPart: '',
-    gifUrl: '',
-    equipment: '',
+    sets: '',
+    repetitions: '',
+    weight: '',
     exercises: []
   });
 
   const navigate = useNavigate();
 
-  const handleWorkoutCreation = () => {
-    workoutAdd(workout).then((data) => {
+  const handleWorkoutCreation = (event) => {
+    event.preventDefault();
+    console.log(user);
+    const newWorkout = {
+      exercises: workout.exercises,
+      owner: user._id,
+      name: workout.name
+    };
+    console.log(newWorkout);
+    workoutAdd(newWorkout).then((data) => {
       const id = data.workout._id;
       navigate(`workout/${id}`);
     });
@@ -29,7 +41,7 @@ const WorkoutAddPage = () => {
         workout={workout}
         onWorkoutChange={setWorkout}
         onWorkoutSubmit={handleWorkoutCreation}
-        buttonLebel="Create Workout"
+        buttonLabel="Create Workout"
       />
     </div>
   );
