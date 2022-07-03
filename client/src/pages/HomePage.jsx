@@ -2,6 +2,11 @@ import { bodyPartList } from '../services/exercise';
 import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import AuthenticationContext from '../context/authentication';
+import './HomePage.scss';
+
+const capitalizeFirstLowercaseRest = (str) => {
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+};
 
 const HomePage = () => {
   const { user, setUser } = useContext(AuthenticationContext);
@@ -28,14 +33,18 @@ const HomePage = () => {
 
   return (
     <div>
+      <h1> Part of the body you want to train</h1>
       {(user && (
-        <>
-          <h1> Part of the body you want to train</h1>
+        <div className="grid">
           {bodyParts &&
             bodyParts.map((part) => {
               return (
-                <Link key={part.name} to={`/exercise/part/${part.name}`}>
-                  <h1>{part.name}</h1>
+                <Link
+                  key={part.name}
+                  to={`/exercise/part/${part.name}`}
+                  className="grid-item"
+                >
+                  <h1>{capitalizeFirstLowercaseRest(part.name)}</h1>
                   <img
                     src={part.image}
                     alt={part.name}
@@ -44,7 +53,7 @@ const HomePage = () => {
                 </Link>
               );
             })}
-        </>
+        </div>
       )) || (
         <>
           <h1>Welcome to IronPump</h1>

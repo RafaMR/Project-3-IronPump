@@ -1,6 +1,26 @@
 nav {
+  background-color: rgb(243, 187, 82);
+  font-size: 1.5em;
   display: flex;
-  a {
-    padding: 1em;
+  padding: 1em 3em 0em 3em;
+  a,
+  button {
+    &:not(:last-child) {
+      margin-right: 1em;
+    }
+    &:first-child {
+      margin-right: auto;
+    }
   }
+}
+
+.navbtn {
+  font: inherit;
+  border: 1px solid #dadada;
+  line-height: inherit;
+  color: rgb(0, 0, 0);
+  padding: 1rem;
+  background: rgb(226, 226, 194);
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
 }

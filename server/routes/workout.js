@@ -32,11 +32,10 @@ router.get('/all', (req, res, next) => {
 // GET - '/workout/:id' - Loads single workout.
 
 router.get('/:id', (req, res, next) => {
-  const { id } = req.body;
+  const { id } = req.params;
   Workout.findById(id)
     .populate('exercises')
     .populate('owner')
-    .populate('sets.exercise')
     .then((workout) => {
       res.json({ workout });
       console.log(workout);

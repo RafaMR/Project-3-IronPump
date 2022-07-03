@@ -3,10 +3,7 @@
     "name": "back",
     "image": "https://images.pexels.com/photos/1552106/pexels-photo-1552106.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
-  {
-    "name": "cardio",
-    "image": "https://images.pexels.com/photos/1390403/pexels-photo-1390403.jpeg?auto=compress&cs=tinysrgb&w=800"
-  },
+
   {
     "name": "chest",
     "image": "https://images.pexels.com/photos/116077/pexels-photo-116077.jpeg?auto=compress&cs=tinysrgb&w=800"

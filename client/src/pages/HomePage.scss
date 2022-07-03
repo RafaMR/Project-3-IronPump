@@ -1,0 +1,28 @@
+div {
+  text-align: center;
+
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(99, 184, 233);
+  color: black;
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2vw;
+}
+.grid {
+  font-size: 5vw;
+  padding: 0.5em;
+  text-align: center;
+}
+
+.grid-item {
+  border: red;
+}
+.grid-item:hover {
+  transform: scale(1.05);
+  color: beige;
+}

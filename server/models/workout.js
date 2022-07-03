@@ -11,7 +11,6 @@ const schema = new mongoose.Schema({
     type: String,
     enum: [
       'back',
-      'cardio',
       'chest',
       'lower arms',
       'lower legs',

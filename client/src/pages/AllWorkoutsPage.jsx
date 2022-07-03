@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { workoutsAll } from '../services/workout';
+import { workoutLoad } from '../services/workout';
+import { Link } from 'react-router-dom';
 
 function AllWorkoutsPage() {
   const [workouts, setWorkouts] = useState([]);
@@ -18,7 +20,9 @@ function AllWorkoutsPage() {
         workouts.map((workout, index) => {
           return (
             <ul key={index}>
+              {/* <Link to={`/workout/${id}`}> */}
               <li>{workout.name}</li>
+              {/* </Link> */}
             </ul>
           );
         })}

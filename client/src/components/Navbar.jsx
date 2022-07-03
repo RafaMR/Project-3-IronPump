@@ -15,20 +15,30 @@ const Navbar = () => {
 
   return (
     <nav>
-      <Link to="/">Home</Link>
+      <Link className="navbtn" to="/">
+        Home
+      </Link>
       {(user && (
         <>
-          <span>Welcome {user.name}</span>
-          <button onClick={handleSignOut}>Sign Out</button>
-          <Link className="btn" to={`/profile/${user._id}`}>
+          {/* <span>Welcome {user.name}</span> */}
+          <button className="navbtn" onClick={handleSignOut}>
+            Sign Out
+          </button>
+          <Link className="navbtn" to={`/profile/${user._id}`}>
             {user.name}Profile
           </Link>
-          <Link to={`/profile/search`}>Search for an user Profile</Link>
+          <Link className="navbtn" to={`/profile/search`}>
+            Search for an user Profile
+          </Link>
         </>
       )) || (
         <>
-          <Link to="/log-in">Log In</Link>
-          <Link to="/register">Register</Link>
+          <Link className="navbtn" to="/log-in">
+            Log In
+          </Link>
+          <Link className="navbtn" to="/register">
+            Register
+          </Link>
         </>
       )}
     </nav>
