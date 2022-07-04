@@ -1,4 +1,6 @@
+import { useContext } from 'react';
 import 'react-dropdown/style.css';
+import AuthenticationContext from '../context/authentication';
 
 const WorkoutForm = ({
   exercises,
@@ -15,7 +17,7 @@ const WorkoutForm = ({
     event.preventDefault();
     onWorkoutSubmit();
   };
-
+  const { user, setUser } = useContext(AuthenticationContext);
   const handleExerciseSelection = (event) => {
     if (
       // checks if the checkbox was checked (from OFF to ON)
@@ -61,59 +63,61 @@ const WorkoutForm = ({
 
   return (
     <>
-      <form onSubmit={handleWorkoutSubmit}>
-        <label htmlFor="input-name"> Workout Name</label>
-        <input
-          type="text"
-          id="input-name"
-          value={workout.name}
-          name="name"
-          onChange={handleWorkoutNameChange}
-        />
+      {(user && (
+        <form onSubmit={handleWorkoutSubmit}>
+          <label htmlFor="input-name"> Workout Name</label>
+          <input
+            type="text"
+            id="input-name"
+            value={workout.name}
+            name="name"
+            onChange={handleWorkoutNameChange}
+          />
 
-        {exercises &&
-          exercises.map((eachDisplayedExercise) => (
-            <div key={eachDisplayedExercise._id}>
-              <input
-                type="checkbox"
-                name="exercise"
-                id={eachDisplayedExercise._id}
-                onChange={handleExerciseSelection}
-              />
-              <h4>{eachDisplayedExercise.name}</h4>
-              <label htmlFor="input-sets">Number of sets</label>
-              <input
-                id={eachDisplayedExercise._id}
-                type="number"
-                min={0}
-                max={5}
-                name="sets"
-                value={workout.sets}
-                onChange={handleExerciseDetails}
-              />
-              <label htmlFor="input-repetitions">Number of repetitions</label>
-              <input
-                id={eachDisplayedExercise._id}
-                type="number"
-                min={0}
-                max={20}
-                name="repetitions"
-                value={workout.repetitions}
-                onChange={handleExerciseDetails}
-              />
-              <label htmlFor="input-weight">Weight</label>
-              <input
-                id={eachDisplayedExercise._id}
-                type="number"
-                min={0}
-                name="weight"
-                value={workout.weight}
-                onChange={handleExerciseDetails}
-              />
-            </div>
-          ))}
-        <input type="submit" value="Create workout" />
-      </form>
+          {exercises &&
+            exercises.map((eachDisplayedExercise) => (
+              <div key={eachDisplayedExercise._id}>
+                <input
+                  type="checkbox"
+                  name="exercise"
+                  id={eachDisplayedExercise._id}
+                  onChange={handleExerciseSelection}
+                />
+                <h4>{eachDisplayedExercise.name}</h4>
+                <label htmlFor="input-sets">Number of sets</label>
+                <input
+                  id={eachDisplayedExercise._id}
+                  type="number"
+                  min={0}
+                  max={5}
+                  name="sets"
+                  value={workout.sets}
+                  onChange={handleExerciseDetails}
+                />
+                <label htmlFor="input-repetitions">Number of repetitions</label>
+                <input
+                  id={eachDisplayedExercise._id}
+                  type="number"
+                  min={0}
+                  max={20}
+                  name="repetitions"
+                  value={workout.repetitions}
+                  onChange={handleExerciseDetails}
+                />
+                <label htmlFor="input-weight">Weight</label>
+                <input
+                  id={eachDisplayedExercise._id}
+                  type="number"
+                  min={0}
+                  name="weight"
+                  value={workout.weight}
+                  onChange={handleExerciseDetails}
+                />
+              </div>
+            ))}
+          <input type="submit" value="Create workout" />
+        </form>
+      )) || <h2>You need to be registered to access this page</h2>}
     </>
   );
 };

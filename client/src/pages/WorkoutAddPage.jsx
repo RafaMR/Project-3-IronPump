@@ -50,7 +50,7 @@ const WorkoutAddPage = () => {
     workoutAdd(newWorkout).then((data) => {
       const id = data.workout._id;
       console.log('RESPONSE: ', data);
-      navigate(`workout/${id}`);
+      navigate(`/${id}`);
     });
   };
 
