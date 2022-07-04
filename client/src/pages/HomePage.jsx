@@ -2,6 +2,7 @@ import { bodyPartList } from '../services/exercise';
 import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import AuthenticationContext from '../context/authentication';
+import ReactPlayer from 'react-player';
 import './HomePage.scss';
 
 const capitalizeFirstLowercaseRest = (str) => {
@@ -33,9 +34,9 @@ const HomePage = () => {
 
   return (
     <div>
-      <h1> Part of the body you want to train</h1>
       {(user && (
         <div className="grid">
+          <h1> Part of the body you want to train</h1>
           {bodyParts &&
             bodyParts.map((part) => {
               return (
@@ -57,9 +58,15 @@ const HomePage = () => {
       )) || (
         <>
           <h1>Welcome to IronPump</h1>
-
-          <Link to="/log-in">Log In</Link>
-          <Link to="/register">Register</Link>
+          <ReactPlayer
+            //url="https://www.youtube.com/watch?v=vi1-4fcX_ig"
+            url={require('../video/test.mp4')}
+            width="100%"
+            height="100%"
+            playing
+            loop={true}
+            muted={true}
+          />
         </>
       )}
     </div>
