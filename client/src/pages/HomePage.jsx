@@ -35,29 +35,32 @@ const HomePage = () => {
   return (
     <div>
       {(user && (
-        <div className="grid">
+        <>
           <h1> Part of the body you want to train</h1>
-          {bodyParts &&
-            bodyParts.map((part) => {
-              return (
-                <Link
-                  key={part.name}
-                  to={`/exercise/part/${part.name}`}
-                  className="grid-item"
-                >
-                  <h1>{capitalizeFirstLowercaseRest(part.name)}</h1>
-                  <img
-                    src={part.image}
-                    alt={part.name}
-                    style={{ width: 200, height: 300 }}
-                  />
-                </Link>
-              );
-            })}
-        </div>
+
+          <div className="grid">
+            {bodyParts &&
+              bodyParts.map((part) => {
+                return (
+                  <Link
+                    key={part.name}
+                    to={`/exercise/part/${part.name}`}
+                    className="grid-item"
+                  >
+                    <h1>{capitalizeFirstLowercaseRest(part.name)}</h1>
+                    <img
+                      src={part.image}
+                      alt={part.name}
+                      style={{ width: 200, height: 300 }}
+                    />
+                  </Link>
+                );
+              })}
+          </div>
+        </>
       )) || (
         <>
-          <h1>Welcome to IronPump</h1>
+          <span>Welcome to IronPump</span>
           <ReactPlayer
             //url="https://www.youtube.com/watch?v=vi1-4fcX_ig"
             url={require('../video/test.mp4')}

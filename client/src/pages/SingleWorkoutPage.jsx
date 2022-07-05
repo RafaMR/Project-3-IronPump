@@ -1,11 +1,13 @@
 import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import AuthenticationContext from '../context/authentication';
+import { singleExercise } from '../services/exercise';
 import { workoutLoad } from '../services/workout';
 
 const SingleWorkoutPage = () => {
   const { user, setUser } = useContext(AuthenticationContext);
   const [workout, setworkout] = useState();
+  const [exercise, setExercise] = useState([]);
 
   const { id } = useParams();
 
