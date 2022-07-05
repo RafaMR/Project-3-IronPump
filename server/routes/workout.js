@@ -34,11 +34,11 @@ router.get('/all', (req, res, next) => {
 router.get('/:id', (req, res, next) => {
   const { id } = req.params;
   Workout.findById(id)
-    .populate('exercises')
+    .populate('exercises.exercise')
     .populate('owner')
     .then((workout) => {
+      console.log('WORKOUT!', workout, workout.exercises[0].exercise.name);
       res.json({ workout });
-      console.log(workout);
     })
     .catch((err) => {
       next(err);

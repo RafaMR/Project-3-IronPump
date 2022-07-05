@@ -13,9 +13,9 @@ export const bodyPartList = () =>
     .get('/exercise/body-parts')
     .then((response) => response.data);
 
-export const exercisesByBodyPart = (partName) =>
+export const exercisesByBodyPart = (partName, page) =>
   apiAuthentication
-    .get(`/exercise/part/${partName}`)
+    .get(`/exercise/part/${partName}?page=${page}`)
     .then((response) => response.data);
 
 export const singleExercise = (id) =>

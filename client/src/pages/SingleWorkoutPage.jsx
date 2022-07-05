@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import AuthenticationContext from '../context/authentication';
 import { singleExercise } from '../services/exercise';
 import { workoutLoad } from '../services/workout';
+import { exerciseList } from '../services/exercise';
+import { Link } from 'react-router-dom';
 
 const SingleWorkoutPage = () => {
   const { user, setUser } = useContext(AuthenticationContext);
@@ -13,29 +15,45 @@ const SingleWorkoutPage = () => {
 
   useEffect(() => {
     workoutLoad(id).then((data) => {
-      console.log(id);
+      // console.log(id);
       console.log(data);
       setworkout(data.workout);
+      setExercise(data.workout.exercises);
+      console.log('STATE:EXERCISE', exercise, 'STATE:WORKOUT', workout);
     });
   }, [id]);
 
+  // const getExercise = () => {
+  //   exerciseList(workout).then((data) => {
+  //     console.log(data);
+  //     setExercise(data.exercises);
+  //   });
+  // };
+  // useEffect(() => {
+  //   getExercise();
+  // }, []);
+
   return (
     <div>
-      {workout && (
+      {(user && (
         <>
-          <h2>
-            This workout is called {workout.name} and was created by{` `}
-            {workout.owner.name}
-          </h2>
-          <h3>
-            {workout.exercises.map((exercise, index) => {
+          <h1>{workout && workout.name}</h1>
+          {exercise &&
+            exercise.map((item, index) => {
+              const { name, _id, gifUrl } = item.exercise;
               return (
-                <ul key={index}>
-                  <li>{exercise._id}</li>
-                </ul>
+                <Link key={index} to={`/exercise/id/${_id}`}>
+                  <li>{name}</li>
+                  <img src={gifUrl} alt={name} />
+                </Link>
               );
             })}
-          </h3>
+        </>
+      )) || (
+        <>
+          <h2>You need to be registered to access this page</h2>
+          <Link to="/log-in">Log In</Link>
+          <Link to="/register">Register</Link>
         </>
       )}
     </div>

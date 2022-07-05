@@ -6,15 +6,27 @@ import { exercisesByBodyPart } from '../services/exercise';
 const BodyPartPage = () => {
   const { user, setUser } = useContext(AuthenticationContext);
   const [part, setPart] = useState();
+  const [page, setPage] = useState(1);
 
   const { partName } = useParams();
 
+  const handlePrevious = () => {
+    const previousPage = Math.max(page - 1, 1);
+    console.log(page, previousPage);
+    setPage(previousPage);
+  };
+  const handleNext = () => {
+    const nextPage = Math.min(page + 1, 40);
+    console.log(page, nextPage);
+    setPage(nextPage);
+  };
+
   useEffect(() => {
-    exercisesByBodyPart(partName).then((data) => {
+    exercisesByBodyPart(partName, page).then((data) => {
       console.log(data);
       setPart(data.exercises);
     });
-  }, [partName]);
+  }, [partName, page]);
 
   //   return (
   //     <div>
@@ -30,6 +42,8 @@ const BodyPartPage = () => {
 
   return (
     <div>
+      <button onClick={handlePrevious}>Previous</button>
+      <button onClick={handleNext}>Next</button>
       {(user && (
         <>
           <h1>{partName}</h1>
