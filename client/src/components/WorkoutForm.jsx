@@ -77,6 +77,12 @@ const WorkoutForm = ({
           {exercises &&
             exercises.map((eachDisplayedExercise) => (
               <div key={eachDisplayedExercise._id}>
+                <img
+                  src={eachDisplayedExercise.gifUrl}
+                  alt={eachDisplayedExercise.name}
+                  height="100px"
+                  width="100px"
+                />
                 <input
                   type="checkbox"
                   name="exercise"

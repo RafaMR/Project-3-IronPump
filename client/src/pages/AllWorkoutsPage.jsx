@@ -20,9 +20,9 @@ function AllWorkoutsPage() {
         workouts.map((workout, index) => {
           return (
             <ul key={index}>
-              {/* <Link to={`/workout/${id}`}> */}
-              <li>{workout.name}</li>
-              {/* </Link> */}
+              <Link to={`/workout/${workout._id}`}>
+                <li>{workout.name}</li>
+              </Link>
             </ul>
           );
         })}

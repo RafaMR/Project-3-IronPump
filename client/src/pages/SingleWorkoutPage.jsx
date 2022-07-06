@@ -1,10 +1,11 @@
 import { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import AuthenticationContext from '../context/authentication';
 import { singleExercise } from '../services/exercise';
-import { workoutLoad } from '../services/workout';
+import { workoutDelete, workoutLoad } from '../services/workout';
 import { exerciseList } from '../services/exercise';
 import { Link } from 'react-router-dom';
+import './SingleWorkout.scss';
 
 const SingleWorkoutPage = () => {
   const { user, setUser } = useContext(AuthenticationContext);
@@ -12,6 +13,8 @@ const SingleWorkoutPage = () => {
   const [exercise, setExercise] = useState([]);
 
   const { id } = useParams();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     workoutLoad(id).then((data) => {
@@ -22,7 +25,11 @@ const SingleWorkoutPage = () => {
       console.log('STATE:EXERCISE', exercise, 'STATE:WORKOUT', workout);
     });
   }, [id]);
-
+  const handleWorkoutDeletion = () => {
+    workoutDelete(id).then(() => {
+      navigate('/workout/all');
+    });
+  };
   // const getExercise = () => {
   //   exerciseList(workout).then((data) => {
   //     console.log(data);
@@ -42,12 +49,19 @@ const SingleWorkoutPage = () => {
             exercise.map((item, index) => {
               const { name, _id, gifUrl } = item.exercise;
               return (
-                <Link key={index} to={`/exercise/id/${_id}`}>
-                  <li>{name}</li>
-                  <img src={gifUrl} alt={name} />
-                </Link>
+                <div className="displayed-exercises">
+                  <Link
+                    key={index}
+                    to={`/exercise/id/${_id}`}
+                    className="displayed-exercises"
+                  >
+                    <h2>{name}</h2>
+                    <img src={gifUrl} alt={name} />
+                  </Link>
+                </div>
               );
             })}
+          <button onClick={handleWorkoutDeletion}>Delete Workout</button>
         </>
       )) || (
         <>

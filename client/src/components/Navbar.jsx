@@ -27,6 +27,9 @@ const Navbar = () => {
           <Link className="navbtn" to={`/workout`}>
             Create a Workout
           </Link>
+          <Link className="navbtn" to={`/workout/all`}>
+            Browse Workouts
+          </Link>
           <Link className="navbtn" to={`/profile/search`}>
             Search for an user Profile
           </Link>

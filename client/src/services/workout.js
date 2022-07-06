@@ -68,6 +68,10 @@ export const workoutEdit = (id, exercises, sets) =>
     .patch(`/workout/${id}`, exercises, sets)
     .then((response) => response.data);
 
+//workoutDelete - DELETE to '/workout/:id' - Allow user to delete workout
+export const workoutDelete = (id) =>
+  apiAuthentication.delete(`/workout/${id}`).then((response) => response.data);
+
 //workoutAdd -  POST to '/workout' - Allows user to create workout.
 
 export const workoutAdd = (exercises, sets) =>
