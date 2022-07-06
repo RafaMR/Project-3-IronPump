@@ -1,3 +1,5 @@
+import ImageInput from './ImageInput';
+
 const AuthenticationForm = (props) => {
   const handleSubmission = (event) => {
     event.preventDefault();
@@ -60,7 +62,12 @@ const AuthenticationForm = (props) => {
             />
           </>
         )}
-
+        <ImageInput
+          image={props.user.picture}
+          onImageChange={(url) =>
+            props.onUserChange({ ...props.user, picture: url })
+          }
+        />
         {props.displayInputs.includes('password') && (
           <>
             <label htmlFor="input-password">Password</label>

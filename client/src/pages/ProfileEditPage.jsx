@@ -32,7 +32,7 @@ const ProfileEditPage = () => {
       {profile && (
         <AuthenticationForm
           user={profile}
-          buttonLabel="Edit our profile"
+          buttonLabel="Edit your profile"
           displayInputs={['name', 'email', 'picture']}
           onUserChange={setProfile}
           onAuthenticationSubmit={handleProfileEdit}

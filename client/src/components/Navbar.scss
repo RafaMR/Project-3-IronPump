@@ -1,5 +1,5 @@
 nav {
-  background-color: rgb(15, 9, 124);
+  background-color: rgb(172, 184, 203);
   font-size: 1.5em;
   display: flex;
   padding: 1em 3em 0em 3em;
@@ -16,10 +16,34 @@ nav {
 
 .navbtn {
   border: 1px solid #dadada;
-  line-height: inherit;
-  color: rgb(0, 0, 0);
+  line-height: 20px;
+  font-size: 0.7em;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
   padding: 1rem;
-  background: rgb(226, 226, 194);
+  background: rgb(76, 80, 80);
   margin-bottom: 1rem;
   border-radius: 1rem;
+  //width: 20rem;
+  //height: 2rem;
 }
+
+// .navbtn {
+//   margin: 0.5rem;
+//   width: 20rem;
+//   height: 2rem;
+//   border: none;
+//   border-radius: 0.5rem;
+//   background-color: #f8f8f8;
+//   font-size: 1rem;
+//   padding: 0.5rem;
+// }
+
+// .navbtn {
+//   margin-top: 1em;
+//   border-radius: 1em;
+//   padding: 0.6em;
+//   border: none;
+//   color: white;
+//   background-color: #3dc4fc;
+// }

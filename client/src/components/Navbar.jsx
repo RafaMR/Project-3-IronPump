@@ -21,11 +21,8 @@ const Navbar = () => {
       {(user && (
         <>
           {/* <span>Welcome {user.name}</span> */}
-          <button className="navbtn" onClick={handleSignOut}>
-            Sign Out
-          </button>
           <Link className="navbtn" to={`/profile/${user._id}`}>
-            {user.name}Profile
+            {user.name}´s Profile
           </Link>
           <Link className="navbtn" to={`/workout`}>
             Create a Workout
@@ -33,6 +30,9 @@ const Navbar = () => {
           <Link className="navbtn" to={`/profile/search`}>
             Search for an user Profile
           </Link>
+          <button className="navbtn" onClick={handleSignOut}>
+            Sign Out
+          </button>
         </>
       )) || (
         <>

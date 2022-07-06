@@ -28,9 +28,7 @@ input[type='email'],
 input[type='password'],
 input[type='date'],
 textarea,
-select,
-button,
-.btn {
+select {
   font: inherit;
   border: 1px solid #dadada;
   line-height: inherit;
@@ -49,6 +47,19 @@ button {
   cursor: pointer;
 }
 
+button,
+.btn {
+  border: 1px solid #dadada;
+  line-height: 20px;
+  font-size: 0.7em;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  padding: 1rem;
+  background: rgb(76, 80, 80);
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -59,6 +70,10 @@ a {
   text-decoration: none;
 }
 
-// img {
-//   max-width: 100%;
-// }
+img {
+  max-width: 100%;
+}
+
+image {
+  max-width: 100%;
+}
