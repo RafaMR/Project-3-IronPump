@@ -30,9 +30,9 @@ const Navbar = () => {
           <Link className="navbtn" to={`/workout/all`}>
             Browse Workouts
           </Link>
-          <Link className="navbtn" to={`/profile/search`}>
+          {/* <Link className="navbtn" to={`/profile/search`}>
             Search for an user Profile
-          </Link>
+          </Link> */}
           <button className="navbtn" onClick={handleSignOut}>
             Sign Out
           </button>
