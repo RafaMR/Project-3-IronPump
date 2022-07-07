@@ -6,16 +6,12 @@ import { workoutDelete, workoutLoad } from '../services/workout';
 import { exerciseList } from '../services/exercise';
 import { Link } from 'react-router-dom';
 import './SingleWorkout.scss';
-
 const SingleWorkoutPage = () => {
   const { user, setUser } = useContext(AuthenticationContext);
   const [workout, setworkout] = useState();
   const [exercise, setExercise] = useState([]);
-
   const { id } = useParams();
-
   const navigate = useNavigate();
-
   useEffect(() => {
     workoutLoad(id).then((data) => {
       // console.log(id);
@@ -30,11 +26,9 @@ const SingleWorkoutPage = () => {
       navigate('/workout/all');
     });
   };
-
   const capitalizeFirstLowercaseRest = (str) => {
     return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
   };
-
   // const getExercise = () => {
   //   exerciseList(workout).then((data) => {
   //     console.log(data);
@@ -44,22 +38,22 @@ const SingleWorkoutPage = () => {
   // useEffect(() => {
   //   getExercise();
   // }, []);
-
   return (
     <div>
       {(user && (
         <>
           <h1>{workout && workout.name}</h1>
           <div className="displayed-exercises">
-            {exercise &&
-              exercise.map((item, index) => {
+            {workout &&
+              workout.exercises.map((item, index) => {
                 const { name, _id, gifUrl } = item.exercise;
                 return (
                   <Link key={index} to={`/exercise/id/${_id}`}>
-                    <h3 style={{ fontWeight: 'bold', marginBottom: 15 }}>
-                      {capitalizeFirstLowercaseRest(name)}
-                    </h3>
+                    <h3>{capitalizeFirstLowercaseRest(name)}</h3>
                     <img src={gifUrl} alt={name} />
+                    <p>Sets: {item.sets}</p>
+                    <p>Reps: {item.repetitions}</p>
+                    <p>Weight: {item.weight} kgs</p>
                   </Link>
                 );
               })}
@@ -78,5 +72,4 @@ const SingleWorkoutPage = () => {
     </div>
   );
 };
-
 export default SingleWorkoutPage;

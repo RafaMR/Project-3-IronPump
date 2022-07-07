@@ -2,6 +2,7 @@
   "name": "ironpump-client",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3010",
   "dependencies": {
     "axios": "^0.27.2",
     "imagekitio-react": "^1.1.1",

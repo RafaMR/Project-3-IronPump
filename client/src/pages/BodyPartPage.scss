@@ -1,0 +1,14 @@
+.exercises-bodypart {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 4em;
+}
+
+.exercises img {
+  width: 80%;
+  height: auto;
+  //border-radius: 50%;
+  border-radius: 3rem;
+  object-fit: cover;
+}

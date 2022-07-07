@@ -48,13 +48,14 @@ router.get('/part/:partName', (req, res, next) => {
   // if page=2, skip is 10
   // if page=3, skip is 20
   // if page=4, skip is 30
-  const { partName, page } = req.params;
+  const { partName } = req.params;
+  const page = req.query.page;
   const LIMIT = 10;
-  const SKIP = LIMIT * page - LIMIT;
-
+  const SKIP = LIMIT * (page - 1);
   Exercise.find({ bodyPart: partName })
-    .skip(SKIP)
     .limit(LIMIT)
+    .skip(SKIP)
+    .sort({ name: 1 })
     .then((exercises) => {
       console.log('EXERCISES', exercises);
       res.json({ exercises });

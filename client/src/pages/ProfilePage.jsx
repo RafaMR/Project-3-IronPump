@@ -45,7 +45,7 @@ const ProfilePage = () => {
             />
 
             {user && user._id === id && (
-              <Link className="btn" to="/profile/edit">
+              <Link className="btn" style={{ fontSize: 15 }} to="/profile/edit">
                 Edit Your Profile
               </Link>
             )}

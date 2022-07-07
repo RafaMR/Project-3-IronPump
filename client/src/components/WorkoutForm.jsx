@@ -2,6 +2,8 @@ import { useContext } from 'react';
 import 'react-dropdown/style.css';
 import AuthenticationContext from '../context/authentication';
 
+import './WorkoutForm.scss';
+
 const WorkoutForm = ({
   exercises,
   workout,
@@ -64,7 +66,7 @@ const WorkoutForm = ({
   return (
     <>
       {(user && (
-        <form onSubmit={handleWorkoutSubmit}>
+        <form onSubmit={handleWorkoutSubmit} className="workout-form">
           <label htmlFor="input-name"> Workout Name</label>
           <input
             type="text"

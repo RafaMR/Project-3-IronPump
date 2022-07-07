@@ -51,7 +51,7 @@ const HomePage = () => {
                     <img
                       src={part.image}
                       alt={part.name}
-                      style={{ width: 200, height: 300 }}
+                      style={{ width: 200, height: 300, borderRadius: 20 }}
                     />
                   </Link>
                 );

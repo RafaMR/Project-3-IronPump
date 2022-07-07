@@ -7,6 +7,8 @@ import Dropdown from 'react-dropdown';
 import AuthenticationContext from '../context/authentication';
 import { exercisesByBodyPart } from '../services/exercise';
 
+import './WorkoutAddPage.scss';
+
 const DROPDOWN_OPTIONS = [
   'back',
   'cardio',
@@ -70,6 +72,7 @@ const WorkoutAddPage = () => {
       <h1>Add Workout</h1>
       <label htmlFor="input-bodyPart">Body Part</label>
       <Dropdown
+        className="dropdown"
         id="input-bodyPart"
         options={DROPDOWN_OPTIONS}
         onChange={handleFilterByBodyParts}

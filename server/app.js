@@ -51,11 +51,11 @@ app.use(
 app.use(basicAuthenticationDeserializer);
 app.use(bindUserToViewLocals);
 
-app.use('/', baseRouter);
-app.use('/authentication', authenticationRouter);
-app.use('/profile', profileRouter);
-app.use('/exercise', exerciseRouter);
-app.use('/workout', workoutRouter);
+app.use('/api/', baseRouter);
+app.use('api/authentication', authenticationRouter);
+app.use('api/profile', profileRouter);
+app.use('api/exercise', exerciseRouter);
+app.use('api/workout', workoutRouter);
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {

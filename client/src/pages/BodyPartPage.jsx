@@ -3,6 +3,8 @@ import { Link, useParams } from 'react-router-dom';
 import AuthenticationContext from '../context/authentication';
 import { exercisesByBodyPart } from '../services/exercise';
 
+import './BodyPartPage.scss';
+
 const BodyPartPage = () => {
   const { user, setUser } = useContext(AuthenticationContext);
   const [part, setPart] = useState();
@@ -45,7 +47,7 @@ const BodyPartPage = () => {
       <button onClick={handlePrevious}>Previous</button>
       <button onClick={handleNext}>Next</button>
       {(user && (
-        <>
+        <div className="exercises-bodypart">
           <h1>{partName}</h1>
           {part &&
             part.map((exercises, index) => {
@@ -56,7 +58,7 @@ const BodyPartPage = () => {
                 </Link>
               );
             })}
-        </>
+        </div>
       )) || (
         <>
           <h2>You need to be registered to access this page</h2>
