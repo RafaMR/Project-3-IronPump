@@ -30,18 +30,6 @@ const BodyPartPage = () => {
     });
   }, [partName, page]);
 
-  //   return (
-  //     <div>
-  //       {part &&
-  //         part.map((exercises, index) => (
-  //           <ul key={index}>
-  //             <li>{exercises.name}</li>
-  //           </ul>
-  //         ))}
-  //     </div>
-  //   );
-  // };
-
   return (
     <div>
       <button onClick={handlePrevious}>Previous</button>
@@ -52,7 +40,7 @@ const BodyPartPage = () => {
           {part &&
             part.map((exercises, index) => {
               return (
-                <Link key={index} to={`/exercise/id/${exercises.id}`}>
+                <Link key={index} to={`/exercise/id/${exercises._id}`}>
                   <li>{exercises.name}</li>
                   <img src={exercises.gifUrl} alt={exercises.name} />
                 </Link>

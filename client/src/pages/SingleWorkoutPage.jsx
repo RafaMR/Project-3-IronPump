@@ -51,9 +51,9 @@ const SingleWorkoutPage = () => {
                   <Link key={index} to={`/exercise/id/${_id}`}>
                     <h3>{capitalizeFirstLowercaseRest(name)}</h3>
                     <img src={gifUrl} alt={name} />
-                    <p>Sets: {item.sets}</p>
-                    <p>Reps: {item.repetitions}</p>
-                    <p>Weight: {item.weight} kgs</p>
+                    <h5>Sets: {item.sets}</h5>
+                    <h5>Reps: {item.repetitions}</h5>
+                    <h5>Weight: {item.weight} kgs</h5>
                   </Link>
                 );
               })}

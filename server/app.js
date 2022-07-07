@@ -1,5 +1,4 @@
 'use strict';
-
 const path = require('path');
 const express = require('express');
 const createError = require('http-errors');
@@ -15,9 +14,7 @@ const authenticationRouter = require('./routes/authentication');
 const profileRouter = require('./routes/profile');
 const exerciseRouter = require('./routes/exercise');
 const workoutRouter = require('./routes/workout');
-
 const app = express();
-
 app.use(serveFavicon(path.join(__dirname, 'public/images', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(
@@ -50,22 +47,18 @@ app.use(
 );
 app.use(basicAuthenticationDeserializer);
 app.use(bindUserToViewLocals);
-
-app.use('/api/', baseRouter);
-app.use('api/authentication', authenticationRouter);
-app.use('api/profile', profileRouter);
-app.use('api/exercise', exerciseRouter);
-app.use('api/workout', workoutRouter);
-
+app.use('/', baseRouter);
+app.use('/authentication', authenticationRouter);
+app.use('/profile', profileRouter);
+app.use('/exercise', exerciseRouter);
+app.use('/workout', workoutRouter);
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {
   next(createError(404));
 });
-
 // Catch all error handler
 app.use((error, req, res, next) => {
   res.status(error.status || 500);
   res.json({ type: 'error', error: { message: error.message } });
 });
-
 module.exports = app;
