@@ -27,16 +27,32 @@ input[type='number'],
 input[type='email'],
 input[type='password'],
 input[type='date'],
+input[type='picture'],
 textarea,
 select {
-  font: inherit;
-  border: 1px solid #dadada;
-  line-height: inherit;
-  color: inherit;
-  padding: 1rem;
-  background: transparent;
-  margin-bottom: 1rem;
-  border-radius: 0.25rem;
+  margin: 0.7rem;
+  width: 20rem;
+  height: 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #f8f8f8;
+  font-size: 1rem;
+  padding: 0.5rem;
+  color: #333;
+  // font: inherit;
+  // border: 1px solid #dadada;
+  // line-height: inherit;
+  // color: inherit;
+  // padding: 1rem;
+  // background: transparent;
+  // margin-bottom: 1rem;
+  // border-radius: 0.25rem;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 1.5rem;
 }
 
 .btn {
@@ -63,6 +79,7 @@ button,
 form {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 a {

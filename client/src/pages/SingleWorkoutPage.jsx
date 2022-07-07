@@ -30,6 +30,11 @@ const SingleWorkoutPage = () => {
       navigate('/workout/all');
     });
   };
+
+  const capitalizeFirstLowercaseRest = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  };
+
   // const getExercise = () => {
   //   exerciseList(workout).then((data) => {
   //     console.log(data);
@@ -45,23 +50,23 @@ const SingleWorkoutPage = () => {
       {(user && (
         <>
           <h1>{workout && workout.name}</h1>
-          {exercise &&
-            exercise.map((item, index) => {
-              const { name, _id, gifUrl } = item.exercise;
-              return (
-                <div className="displayed-exercises">
-                  <Link
-                    key={index}
-                    to={`/exercise/id/${_id}`}
-                    className="displayed-exercises"
-                  >
-                    <h2>{name}</h2>
+          <div className="displayed-exercises">
+            {exercise &&
+              exercise.map((item, index) => {
+                const { name, _id, gifUrl } = item.exercise;
+                return (
+                  <Link key={index} to={`/exercise/id/${_id}`}>
+                    <h3 style={{ fontWeight: 'bold', marginBottom: 15 }}>
+                      {capitalizeFirstLowercaseRest(name)}
+                    </h3>
                     <img src={gifUrl} alt={name} />
                   </Link>
-                </div>
-              );
-            })}
-          <button onClick={handleWorkoutDeletion}>Delete Workout</button>
+                );
+              })}
+          </div>
+          <button onClick={handleWorkoutDeletion} style={{ fontSize: 30 }}>
+            Delete Workout
+          </button>
         </>
       )) || (
         <>

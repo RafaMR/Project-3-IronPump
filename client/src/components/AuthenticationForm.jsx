@@ -48,9 +48,9 @@ const AuthenticationForm = (props) => {
         {props.displayInputs.includes('picture') && (
           <>
             <label htmlFor="input-picture">Picture</label>
-            <input
+            {/* <input
               id="input-picture"
-              type="text"
+              type="picture"
               placeholder="Picture"
               value={props.user.picture}
               onChange={(event) =>
@@ -59,15 +59,18 @@ const AuthenticationForm = (props) => {
                   picture: event.target.value
                 })
               }
+            /> */}
+            <ImageInput
+              style={{ width: '10%' }}
+              image={props.user.picture}
+              onImageChange={(url) =>
+                props.onUserChange({ ...props.user, picture: url })
+              }
             />
           </>
         )}
-        <ImageInput
-          image={props.user.picture}
-          onImageChange={(url) =>
-            props.onUserChange({ ...props.user, picture: url })
-          }
-        />
+        <br />
+
         {props.displayInputs.includes('password') && (
           <>
             <label htmlFor="input-password">Password</label>
@@ -85,8 +88,9 @@ const AuthenticationForm = (props) => {
             />
           </>
         )}
+        <br />
 
-        <button>{props.buttonLabel}</button>
+        <button style={{ fontSize: 20 }}>{props.buttonLabel}</button>
       </form>
     </div>
   );

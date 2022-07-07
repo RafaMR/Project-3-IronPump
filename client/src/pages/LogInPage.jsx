@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import AuthenticationContext from '../context/authentication';
 import { logInUser } from '../services/authentication';
 import AuthenticationForm from '../components/AuthenticationForm';
+import './LogInPage.scss';
 
 const LogInPage = () => {
   const navigate = useNavigate();
@@ -22,8 +23,9 @@ const LogInPage = () => {
   };
 
   return (
-    <div>
-      <h1>Log In</h1>
+    <div className="login-page">
+      <h2>Log In</h2>
+      <br />
       <AuthenticationForm
         user={user}
         buttonLabel="Log In"

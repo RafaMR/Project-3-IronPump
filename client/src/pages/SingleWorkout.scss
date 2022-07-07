@@ -1,15 +1,39 @@
+// h1 {
+//   position: absolute;
+//   transform: translate(-50%, -50%);
+//   left: 50%;
+//   top: 20%;
+//   font-size: 60px;
+//   background-color: transparent;
+//   color: rgb(255, 255, 255);
+//   font-weight: 900;
+//   font-style: oblique;
+//   text-decoration: solid;
+// }
+// .displayed-exercises {
+//   //
+// }
+.displayed-exercises {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 4em;
+}
+
+.displayed-exercises img {
+  width: 80%;
+  height: auto;
+  //border-radius: 50%;
+  border-radius: 3rem;
+  object-fit: cover;
+}
+
 h1 {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 20%;
   font-size: 60px;
   background-color: transparent;
   color: rgb(255, 255, 255);
   font-weight: 900;
   font-style: oblique;
   text-decoration: solid;
-}
-.displayed-exercises {
-  //
+  margin-top: 0.5em;
 }

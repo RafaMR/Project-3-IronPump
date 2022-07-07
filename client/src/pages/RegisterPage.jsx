@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import AuthenticationForm from '../components/AuthenticationForm';
 import AuthenticationContext from '../context/authentication';
 import { registerUser } from '../services/authentication';
+import './RegisterPage.scss';
 
 const RegisterPage = () => {
   const navigate = useNavigate();
@@ -24,8 +25,8 @@ const RegisterPage = () => {
   };
 
   return (
-    <div>
-      <h1>Register New Account</h1>
+    <div className="register-page">
+      <h2>Register New Account</h2>
       <AuthenticationForm
         user={user}
         displayInputs={['name', 'email', 'password', 'picture']}

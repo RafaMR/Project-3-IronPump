@@ -1,0 +1,45 @@
+.profile-page header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem;
+  background-color: rgb(80, 129, 154);
+  border-bottom: 1px solid #e6e6e6;
+}
+.profile-page header h2 {
+  font-size: 60px;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  font-weight: 900;
+  font-style: oblique;
+  text-decoration: solid;
+}
+
+.profile-image {
+  width: 20%;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+section h2 {
+  font-size: 60px;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  font-weight: 900;
+  font-style: oblique;
+  text-decoration: solid;
+}
+
+.profile-button {
+  border: 1px solid #dadada;
+  line-height: 10px;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  padding: 0.8rem;
+  background: rgb(38, 188, 140);
+  margin-bottom: 1rem;
+  border-radius: 3rem;
+  width: 15%;
+}
