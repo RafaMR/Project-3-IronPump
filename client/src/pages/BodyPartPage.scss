@@ -1,14 +1,29 @@
 .exercises-bodypart {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-around;
-  margin: 4em;
+  justify-content: space-evenly;
+  //align-content: space-evenly;
+  margin: 1em;
 }
 
-.exercises img {
-  width: 80%;
+.exercises-bodypart img {
+  width: auto;
   height: auto;
-  //border-radius: 50%;
   border-radius: 3rem;
   object-fit: cover;
+  margin: 1em 0em 2em 0em;
+}
+
+.bodypart-button {
+  border: 1px solid #dadada;
+  line-height: 15px;
+  font-size: 1em;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  padding: 0.8rem;
+  background: rgb(30, 183, 134);
+  margin-bottom: 1rem;
+  border-radius: 3rem;
+  width: 30%;
 }

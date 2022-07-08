@@ -63,11 +63,15 @@ const WorkoutForm = ({
     onAddSelectedExercise(newExercises);
   };
 
+  const capitalizeFirstLowercaseRest = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  };
+
   return (
     <>
       {(user && (
         <form onSubmit={handleWorkoutSubmit} className="workout-form">
-          <label htmlFor="input-name"> Workout Name</label>
+          <label htmlFor="input-name">Workout Name</label>
           <input
             type="text"
             id="input-name"
@@ -82,18 +86,24 @@ const WorkoutForm = ({
                 <img
                   src={eachDisplayedExercise.gifUrl}
                   alt={eachDisplayedExercise.name}
-                  height="100px"
-                  width="100px"
+                  height="200px"
+                  width="200px"
+                  style={{ borderRadius: 50, marginTop: 50 }}
                 />
+                <br />
                 <input
                   type="checkbox"
                   name="exercise"
                   id={eachDisplayedExercise._id}
                   onChange={handleExerciseSelection}
                 />
-                <h4>{eachDisplayedExercise.name}</h4>
+                <br />
+                <h3>
+                  {capitalizeFirstLowercaseRest(eachDisplayedExercise.name)}
+                </h3>
                 <label htmlFor="input-sets">Number of sets</label>
                 <input
+                  style={{ width: 70, marginRight: 50 }}
                   id={eachDisplayedExercise._id}
                   type="number"
                   min={0}
@@ -104,6 +114,7 @@ const WorkoutForm = ({
                 />
                 <label htmlFor="input-repetitions">Number of repetitions</label>
                 <input
+                  style={{ width: 70, marginRight: 50 }}
                   id={eachDisplayedExercise._id}
                   type="number"
                   min={0}
@@ -114,6 +125,7 @@ const WorkoutForm = ({
                 />
                 <label htmlFor="input-weight">Weight</label>
                 <input
+                  style={{ width: 70, marginRight: 50 }}
                   id={eachDisplayedExercise._id}
                   type="number"
                   min={0}
@@ -123,7 +135,16 @@ const WorkoutForm = ({
                 />
               </div>
             ))}
-          <input type="submit" value="Create workout" />
+          {/* <input
+            className="createworkout-button"
+            type="submit"
+            value="Create workout"
+          /> */}
+          <br />
+          <br />
+          <button className="createworkout-button" type="submit">
+            Create Workout
+          </button>
         </form>
       )) || <h2>You need to be registered to access this page</h2>}
     </>

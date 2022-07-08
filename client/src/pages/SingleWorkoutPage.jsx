@@ -5,7 +5,7 @@ import { singleExercise } from '../services/exercise';
 import { workoutDelete, workoutLoad } from '../services/workout';
 import { exerciseList } from '../services/exercise';
 import { Link } from 'react-router-dom';
-import './SingleWorkout.scss';
+import './SingleWorkoutPage.scss';
 const SingleWorkoutPage = () => {
   const { user, setUser } = useContext(AuthenticationContext);
   const [workout, setworkout] = useState();

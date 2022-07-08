@@ -70,7 +70,7 @@ const WorkoutAddPage = () => {
   return (
     <div>
       <h1>Add Workout</h1>
-      <label htmlFor="input-bodyPart">Body Part</label>
+      <label htmlFor="input-bodyPart">Choose a Body Part</label>
       <Dropdown
         className="dropdown"
         id="input-bodyPart"

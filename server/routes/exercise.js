@@ -50,7 +50,7 @@ router.get('/part/:partName', (req, res, next) => {
   // if page=4, skip is 30
   const { partName } = req.params;
   const page = req.query.page;
-  const LIMIT = 10;
+  const LIMIT = 5;
   const SKIP = LIMIT * (page - 1);
   Exercise.find({ bodyPart: partName })
     .limit(LIMIT)

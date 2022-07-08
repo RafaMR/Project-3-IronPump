@@ -12,6 +12,10 @@ const BodyPartPage = () => {
 
   const { partName } = useParams();
 
+  const capitalizeFirstLowercaseRest = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  };
+
   const handlePrevious = () => {
     const previousPage = Math.max(page - 1, 1);
     console.log(page, previousPage);
@@ -32,21 +36,35 @@ const BodyPartPage = () => {
 
   return (
     <div>
-      <button onClick={handlePrevious}>Previous</button>
-      <button onClick={handleNext}>Next</button>
       {(user && (
-        <div className="exercises-bodypart">
-          <h1>{partName}</h1>
-          {part &&
-            part.map((exercises, index) => {
-              return (
-                <Link key={index} to={`/exercise/id/${exercises._id}`}>
-                  <li>{exercises.name}</li>
-                  <img src={exercises.gifUrl} alt={exercises.name} />
-                </Link>
-              );
-            })}
-        </div>
+        <>
+          <h1>{capitalizeFirstLowercaseRest(partName)}</h1>
+          <br />
+          <div className="exercises-bodypart">
+            {part &&
+              part.map((exercises, index) => {
+                return (
+                  <Link key={index} to={`/exercise/id/${exercises._id}`}>
+                    <h6 style={{ fontSize: 30 }}>
+                      {capitalizeFirstLowercaseRest(exercises.name)}
+                    </h6>
+
+                    <img src={exercises.gifUrl} alt={exercises.name} />
+                  </Link>
+                );
+              })}
+          </div>
+          <button
+            onClick={handlePrevious}
+            style={{ marginRight: 30 }}
+            className="bodypart-button"
+          >
+            Previous
+          </button>
+          <button onClick={handleNext} className="bodypart-button">
+            Next Page
+          </button>
+        </>
       )) || (
         <>
           <h2>You need to be registered to access this page</h2>
