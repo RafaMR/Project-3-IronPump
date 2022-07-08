@@ -1,0 +1,23 @@
+.workouts-page {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  //align-content: space-evenly;
+  margin: 1em;
+}
+
+.workouts img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 1rem;
+  object-fit: contain;
+  margin: 1em 0em 2em 0em;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}

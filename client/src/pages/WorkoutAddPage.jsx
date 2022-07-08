@@ -60,12 +60,25 @@ const WorkoutAddPage = () => {
     setSelectedBodyPart(event.value);
     setWorkout({ ...workout, bodyPart: event.value });
   };
+  // Trying to perform pagination
+  const [page, setPage] = useState(1);
+
+  const handlePrevious = () => {
+    const previousPage = Math.max(page - 1, 1);
+    console.log(page, previousPage);
+    setPage(previousPage);
+  };
+  const handleNext = () => {
+    const nextPage = Math.min(page + 1, 40);
+    console.log(page, nextPage);
+    setPage(nextPage);
+  };
 
   useEffect(() => {
-    exercisesByBodyPart(selectedBodyPart).then((data) => {
+    exercisesByBodyPart(selectedBodyPart, page).then((data) => {
       setExercises(data.exercises);
     });
-  }, [selectedBodyPart]);
+  }, [selectedBodyPart, page]);
 
   return (
     <div>
@@ -87,6 +100,16 @@ const WorkoutAddPage = () => {
         selectedExercises={selectedExercises}
         onAddSelectedExercise={setSelectedExercises}
       />
+      <button
+        onClick={handlePrevious}
+        style={{ marginRight: 30 }}
+        className="bodypart-button"
+      >
+        Previous
+      </button>
+      <button onClick={handleNext} className="bodypart-button">
+        Next Page
+      </button>
     </div>
   );
 };
