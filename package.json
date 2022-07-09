@@ -4,11 +4,5 @@
   "scripts": {
     "start": "cd server && npm start",
     "prepare": "cd server && npm i"
-  },
-  "dependencies": {
-    "imagekit": "^4.0.1",
-    "imagekitio-react": "^1.1.1",
-    "react-dropdown": "^1.10.0",
-    "react-player": "^2.10.1"
   }
 }
