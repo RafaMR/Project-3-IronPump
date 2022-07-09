@@ -3,7 +3,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   //align-content: space-evenly;
   margin: 1em;
 }
@@ -20,4 +20,5 @@ li {
   display: flex;
   flex-direction: column;
   list-style: none;
+  align-items: center;
 }
