@@ -62,7 +62,7 @@ listHomeData - issues GET to '/' - Lists body parts and routines. ({ exercises: 
 
 - workoutAdd - issues POST to '/workout' - Allows user to add workout. ✅
 
-workoutDelete - issues DELETE to '/workout/:id' - Allows user to delete workout. ✅
+- workoutDelete - issues DELETE to '/workout/:id' - Allows user to delete workout. ✅
 
 
 
@@ -115,7 +115,7 @@ GET - / - Lists Navbar, Body Parts. ✅
 ```
 
 ```javascript
-- POST - '/authentication/sign-up' - Registers new user. ✅
+POST - '/authentication/sign-up' - Registers new user. ✅
 ```
 
 ```javascript
@@ -159,23 +159,23 @@ GET - '/exercise/id/:id' - Loads single exercise. ✅
 ```
 
 ```javascript
-GET - '/workout/all' - Loads all workouts.
+GET - '/workout/all' - Loads all workouts. ✅
 ```
 
 ```javascript
-GET - '/workout/:id' - Loads single workout.
+GET - '/workout/:id' - Loads single workout. ✅
 ```
 
 ```javascript
-PATCH - '/workout/:id' - Allows user to edit wokout.
+PATCH - '/workout/:id' - Allows user to edit wokout. ✅
 ```
 
 ```javascript
-POST - '/workout' - Allows user to create workout.
+POST - '/workout' - Allows user to create workout. ✅
 ```
 
 ```javascript
-DELETE - '/workout/:id' - Allows user to delete workout.
+DELETE - '/workout/:id' - Allows user to delete workout. ✅
 ```
 
 ## Tools used
