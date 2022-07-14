@@ -1,6 +1,6 @@
 # IronPump
 
-Welcome to meetech. This is a fitness app that allows you to look for fitness exercises and create and manage your own workouts.
+Welcome to IronPump. This is a fitness app that allows you to look for fitness exercises and create and manage your own workouts.
 
 https://ironpump.netlify.app/
 
@@ -10,164 +10,198 @@ https://ironpump.netlify.app/
 
 ## Pages
 
-Home - / - Display body parts list and premade workouts.✅
+- Home - / - Display body parts list and premade workouts.✅
 
-Register - /register - Allow visitor to create account with name, email, password and profile picture. ✅
+- Register - /register - Allow visitor to create account with name, email, password and profile picture. ✅
 
-Log In - /log-in - Allows existing user to log-in. ✅
+- Log In - /log-in - Allows existing user to log-in. ✅
 
-Profile Search - /profile/search - Search for users. ✅
+- Profile Edit - /profile/edit - Allows authenticated user to edit their profile.✅
 
-Profile Edit - /profile/edit - Allows authenticated user to edit their profile.✅
+- Profile - /profile/:id - Visualize users' profile and show workouts created.✅
 
-Profile - /profile/:id - Visualize users' profile and show last 3 training routines made.✅
+- Body Part Page - /exercise/part/:partName - Visualize list exercises from a body part. ✅
 
-Body Part Page - /exercise/part/:partName - Visualize list exercises from a body part. ✅
+- Single Exercise Page - /exercise/id/:id - Visualize single exercise details. ✅
 
-Exercise Search - /exercise/search - Search for exercises.
+- Workout Add - /workout/add - Allows user to post workout. (should list all exercises and allow user to select which exercises go into the new workout) ✅
 
-Single Exercise Page - /exercise/id/:id - Visualize single exercise details.
+- Workout Detail - /workout/:id - Visualize single workout details. ✅
 
-Workout Search - /workout/search - Search for exercises.
+- Workout Search - /workout/all - Shows all existing workouts. ✅
 
-Workout Detail - /workout/:id - Visualize single workout details.
 
-Workout Add - /workout/add - Allows user to post workout. (should list all exercises and allow user to select which exercises go into the new workout)
-
-Workout Edit - /workout/:id/edit - Allows user to post workout.
 
 ## Services
 
 listHomeData - issues GET to '/' - Lists body parts and routines. ({ exercises: [] }).
 
-registerUser - issues POST to '/authentication/sign-up' - Registers new user. ✅
+- registerUser - issues POST to '/authentication/sign-up' - Registers new user. ✅
 
-logInUser - issues POST to '/authentication/sign-in' - Authenticates existing user. ✅
+- logInUser - issues POST to '/authentication/sign-in' - Authenticates existing user. ✅
 
-signOutUser - issues POST to '/authentication/sign-out' - Signs out user. ✅
+- signOutUser - issues POST to '/authentication/sign-out' - Signs out user. ✅
 
-loadUserInformation - issues GET to '/authentication/me' - Loads information about authenticated user. ✅
+- loadUserInformation - issues GET to '/authentication/me' - Loads information about authenticated user. ✅
 
-profileSearch - issues GET to '/profile/search' - Allows user to search for other user profiles. ✅
+- profileLoad - issues GET to '/profile/:id' - Loads single users profile. ✅
 
-profileLoad - issues GET to '/profile/:id' - Loads single users profile. ✅
+- profileEdit - issues PATCH to '/profile' - Edit authenticated users profile. ✅
 
-profileEdit - issues PATCH to '/profile' - Edit authenticated users profile. ✅
+- exerciseList - issues GET to '/exercise/list' - Loads list of all exercises ✅ (NOT USED YET)
 
-exerciseSearch - issues GET to '/exercise/search' - Allows user to search for exercises.✅ (NOT USED YET)
+- bodyPartList - issues GET to '/exercise/body-parts' -Loads list of body parts. ✅
 
-exerciseList - issues GET to '/exercise/list' - Loads list of all exercises ✅ (NOT USED YET)
+- exercisesByBodyPart - issues GET to '/exercise/part/partName/page' - Loads exercises from a body part. ✅
 
-bodyPartList - issues GET to '/exercise/body-parts' -Loads lits body part. ✅
+- singleExercise - issues GET to '/exercise/id/:id' - Loads single exercise. ✅
 
-exercisesByBodyPart - issues GET to '/exercise/part/partName' - Loads exercises from a body part. ✅
+- workoutsAll - issues GET to '/workout/all' - Loads all workouts created. ✅
 
-singleExercise - issues GET to '/exercise/id/:id' - Loads siingle exercise.
+- workoutLoad - issues GET to '/workout/:id' - Loads single workout. ✅
 
-workoutSearch - issues GET to '/workout/search' - Allows user to search for workouts.
+- workoutAdd - issues POST to '/workout' - Allows user to add workout. ✅
 
-workoutLoad - issues GET to '/workout/:id' - Loads single workout.
+workoutDelete - issues DELETE to '/workout/:id' - Allows user to delete workout. ✅
 
-workoutEdit - issues PATCH to '/workout/:id' - Allows user to edit workout created by them. Authenticated usesr.
 
-workoutAdd - issues POST to '/workout' - Allows user to add workout.
 
-workoutDelete - issues DELETE to '/workout/:id' - Allows user to delete workout.
+# Server
 
-### Server
 
 ## Models
 
-User ✅
+### Exercise ✅
 
-name: String, required, trim.
-
-email: String, required, trim, lowercase.
-
-passwordHashAndSalt: String, required.
-
-picture: String.
-
-Exercise ✅
-
-name: String, required.
+- name: String, required.
 
 ...other properties of exercise objects execpt id
 
-Workout ✅
 
-exercises: Array of ObjectId, ref: 'Exercise', required.
+### User ✅
 
-owner: ObjectId, ref: 'User'
+- name: String, required, trim.
 
-sets: [{
-exercise: ObjectId, ref: 'Exercise', required
-repetitions: Number
-weight: Number
-}]
+- picture: String, trim.
+
+- email: String, required, trim, lowercase.
+
+- passwordHashAndSalt: String, required.
+
+- picture: String.
+
+
+### Workout ✅
+
+- name: String, required, trim.
+
+- bodyPart: String, enum.
+
+- exercises: [{
+      exercise: { type: mongoose.Schema.Types.ObjectId, ref: 'Exercise' },
+      sets: { type: Number },
+      repetitions: { type: Number },
+      weight: { type: Number }
+    }]
+
+- owner: ObjectId, ref: 'User'
+
+
 
 ## Request Handlers
 
-GET - / - Lists exercises and routines. ({ exercises: [] }).
+```javascript
+GET - / - Lists Navbar, Body Parts. ✅
+```
 
-POST - '/authentication/sign-up' - Registers new user. ✅
+```javascript
+- POST - '/authentication/sign-up' - Registers new user. ✅
+```
 
+```javascript
 POST - '/authentication/sign-in' - Authenticates existing user. ✅
+```
 
+```javascript
 POST - '/authentication/sign-out' - Signs out user. ✅
+```
 
+```javascript
 GET - '/authentication/me' - Loads information about authenticated user. ✅
+```
 
-GET - '/profile/search' - Allows user to search for other user profiles. ✅
-
+```javascript
 GET - '/profile/:id' - Loads single users profile.✅
+```
 
+```javascript
 PATCH - '/profile' - Edit authenticated users profile.✅
+```
 
-GET - '/exercise/search' - Allows user to search for exercises. ✅
+```javascript
+GET - '/exercise/get-multiple-exercises' - Allows user to look for multiple exercises. ✅
+```
 
+```javascript
 GET - '/exercise/list' - Lists all exercises. ✅
+```
 
+```javascript
 GET - '/exercise/body-parts' - Loads list body parts. ✅
+```
 
+```javascript
 GET - '/exercise/part/:partName - List exercises from a body part. ✅
+```
 
+```javascript
 GET - '/exercise/id/:id' - Loads single exercise. ✅
+```
 
-GET - '/workout/search' - Allows user to search for workouts.
+```javascript
+GET - '/workout/all' - Loads all workouts.
+```
 
+```javascript
 GET - '/workout/:id' - Loads single workout.
+```
 
-POST - '/workout' - Allows user to create workout.
-
+```javascript
 PATCH - '/workout/:id' - Allows user to edit wokout.
+```
 
+```javascript
+POST - '/workout' - Allows user to create workout.
+```
+
+```javascript
 DELETE - '/workout/:id' - Allows user to delete workout.
+```
+
+## Tools used
+
+
+<p align="left"> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg" width="36" height="36" alt="Javascript" /></a> <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/html5-colored.svg" width="36" height="36" alt="HTML5" /></a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg" width="36" height="36" alt="React" /></a> <a href="https://www.w3.org/TR/CSS/#css" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/css3-colored.svg" width="36" height="36" alt="CSS3" /></a> <a href="https://getbootstrap.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/bootstrap-colored.svg" width="36" height="36" alt="Bootstrap" /></a> <a href="https://sass-lang.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/sass-colored.svg" width="36" height="36" alt="Sass" /></a> <a href="https://nodejs.org/en/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nodejs-colored.svg" width="36" height="36" alt="NodeJS" /></a> <a href="https://expressjs.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/express-colored.svg" width="36" height="36" alt="Express" /></a> <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mongodb-colored.svg" width="36" height="36" alt="MongoDB" /></a> <a href="https://www.heroku.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/heroku-colored.svg" width="36" height="36" alt="Heroku" /></a> </p> 
+
+
 
 ## Wishlist
 
-Register - Add motivational phrase, hobbies, etc..
+- Register - Add motivational phrase, hobbies, etc..
 
-Find users nearby.
+- Find users nearby.
 
-Routine tags: Equipment, etc..
+- Routine tags: Equipment, etc..
 
-Personal best: sets, reps, etc...
+- Personal best: sets, reps, etc...
 
-Message Thread List - /message/list - Lists all message threads of an authenticated user.
+- Profile Search - /profile/search - Search for users. 
 
-Message Thread Detail - /message/:id - Displays single message thread between authenticated user and another user. Allows authenticated userd to send new message.
+- Exercise Search - /exercise/search - Search for exercises.
 
-GET - '/message/list' - List all message threads of an authenticated user.
+- Workout Search - /workout/search - Allows user to search for specific workout.
 
-GET - '/message/:id' - List all messages between authenticated user and user of id param.
+- Workout Edit - /workout/:id/edit - Allows user to edit workout.
 
-POST - '/message/:id' - Send message between authenticated user and user of id param.
 
-messageThreadList - issues GET to '/message/list' - List all message threads of an authenticated user.
 
-messageThreadLoad - issues GET to '/message/:id' - List all messages between authenticated user and user of id param.
-
-messageSend - issues POST to '/message/:id' - Send message between authenticated user and user of id param.
-
-RAFA: cahnge to test git
