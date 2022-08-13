@@ -19,6 +19,7 @@ import WorkoutAddPage from './pages/WorkoutAddPage';
 import AllWorkoutsPage from './pages/AllWorkoutsPage';
 import SingleWorkoutPage from './pages/SingleWorkoutPage';
 import WorkoutForm from './components/WorkoutForm';
+import Newnav from './components/Newnav';
 
 const App = () => {
   //const [exercises, setExercises] = useState([]);
@@ -40,7 +41,8 @@ const App = () => {
   return (
     <AuthenticationContext.Provider value={{ user, setUser }}>
       <BrowserRouter>
-        <Navbar />
+        {/* <Navbar /> */}
+        <Newnav />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/exercise/part/:partName" element={<BodyPartPage />} />

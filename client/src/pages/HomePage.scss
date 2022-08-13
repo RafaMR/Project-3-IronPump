@@ -45,50 +45,15 @@ img {
 $breakpointIPhone: 390px;
 
 @media screen and (max-width: $breakpointIPhone) {
-  span {
-    font-family: 'Roboto', sans-serif;
-    position: static;
-    font-style: normal;
-  }
   body {
-    margin: 0 auto;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-      'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-      'Helvetica Neue', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    max-width: 400px;
-    height: 845px;
-    border: solid 1px gray;
-    background: rgb(99, 184, 233);
-    background: linear-gradient(
-      0deg,
-      rgba(99, 184, 233, 1) 0%,
-      rgba(137, 207, 219, 1) 75%
-    );
+    font-family: 'Roboto';
+    max-width: 390px;
   }
-  .navbar {
+  a {
+    text-decoration: none;
+  }
+  .grid {
     display: flex;
-    flex-direction: row;
-    align-content: space-between;
-
-    font-family: 'Roboto', sans-serif;
-    line-height: 20px;
-    font-size: 1.5em;
-    font-weight: bold;
-  }
-
-  .navbtn {
-    border: 1px solid #dadada;
-    margin-right: 2em;
-    margin-left: 1em;
-    line-height: 20px;
-    font-size: 0.7em;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-    padding: 1rem;
-    background: rgb(76, 80, 80);
-    margin: 1em;
-    border-radius: 1rem;
+    flex-direction: column;
   }
 }

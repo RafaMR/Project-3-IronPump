@@ -32,6 +32,7 @@ const LogInPage = () => {
         displayInputs={['email', 'password']}
         onUserChange={setUserState}
         onAuthenticationSubmit={handleLogIn}
+        className="auth-form"
       />
     </div>
     //This code is inside the AuthenticationForm component
