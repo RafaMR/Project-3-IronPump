@@ -27,3 +27,11 @@
   border-radius: 3rem;
   width: 30%;
 }
+@media screen and (max-width: 960px) {
+  .bodypart-button {
+    display: block;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

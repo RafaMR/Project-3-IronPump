@@ -9,8 +9,67 @@
   padding: 20px;
   border-radius: 5px;
   background-color: rgb(70, 87, 101);
+  margin-left: auto;
+  margin-right: auto;
+}
+.Dropdown-placeholder.is-selected {
+  background-color: white;
+}
+.Dropdown-arrow {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-// .workoutadd-page {
-//   background-color: rgb(216, 53, 24);
-// }
+.Dropdown-control {
+  padding-left: 0%;
+  padding-right: 0%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Dropdown-option {
+  padding-left: 0%;
+  padding-right: 0%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(70, 87, 101);
+  color: rgb(237, 145, 15);
+}
+
+.Dropdown-menu[aria-expanded='true'] {
+  transform: translate(-1.2%);
+}
+.inputs,
+.labels {
+  margin-left: 5px;
+}
+
+@media screen and (max-width: 960px) {
+  .Dropdown-menu[aria-expanded='true'] {
+    position: absolute;
+    display: block;
+    align-self: center;
+    max-width: max;
+    transform: translate(-5%);
+    padding-left: 0%;
+    padding-right: 0%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .inputs {
+    margin-left: 19.51%;
+    margin-right: auto;
+    padding-top: 0.2em;
+  }
+  .labels {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .createworkout-button {
+    display: block;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

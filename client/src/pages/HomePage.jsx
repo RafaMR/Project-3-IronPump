@@ -61,7 +61,7 @@ const HomePage = () => {
       )) || (
         <>
           <div>
-            <span>Welcome to IronPump</span>
+            <span className="welcome-message">Welcome to IronPump</span>
             <ReactPlayer
               //url="https://www.youtube.com/watch?v=vi1-4fcX_ig"
               url={require('../video/test.mp4')}
@@ -70,6 +70,7 @@ const HomePage = () => {
               playing
               loop={true}
               muted={true}
+              className="home-video"
             />
           </div>
         </>

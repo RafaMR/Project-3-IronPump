@@ -54,15 +54,11 @@ const BodyPartPage = () => {
                 );
               })}
           </div>
-          <button
-            onClick={handlePrevious}
-            style={{ marginRight: 30 }}
-            className="bodypart-button"
-          >
+          <button onClick={handlePrevious} className="bodypart-button">
             Previous
           </button>
           <button onClick={handleNext} className="bodypart-button">
-            Next Page
+            Next
           </button>
         </>
       )) || (

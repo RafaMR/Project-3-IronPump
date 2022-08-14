@@ -101,8 +101,11 @@ const WorkoutForm = ({
                 <h3>
                   {capitalizeFirstLowercaseRest(eachDisplayedExercise.name)}
                 </h3>
-                <label htmlFor="input-sets">Number of sets</label>
+                <label htmlFor="input-sets" className="labels">
+                  Number of sets
+                </label>
                 <input
+                  className="inputs"
                   style={{ width: 70, marginRight: 50 }}
                   id={eachDisplayedExercise._id}
                   type="number"
@@ -111,8 +114,11 @@ const WorkoutForm = ({
                   value={workout.sets}
                   onChange={handleExerciseDetails}
                 />
-                <label htmlFor="input-repetitions">Number of repetitions</label>
+                <label htmlFor="input-repetitions" className="labels">
+                  Number of repetitions
+                </label>
                 <input
+                  className="inputs"
                   style={{ width: 70, marginRight: 50 }}
                   id={eachDisplayedExercise._id}
                   type="number"
@@ -121,8 +127,11 @@ const WorkoutForm = ({
                   value={workout.repetitions}
                   onChange={handleExerciseDetails}
                 />
-                <label htmlFor="input-weight">Weight</label>
+                <label htmlFor="input-weight" className="labels">
+                  Weight
+                </label>
                 <input
+                  className="inputs"
                   style={{ width: 70, marginRight: 50 }}
                   id={eachDisplayedExercise._id}
                   type="number"
@@ -133,11 +142,7 @@ const WorkoutForm = ({
                 />
               </div>
             ))}
-          {/* <input
-            className="createworkout-button"
-            type="submit"
-            value="Create workout"
-          /> */}
+
           <br />
           <br />
           <button className="createworkout-button" type="submit">
