@@ -90,7 +90,9 @@ const AuthenticationForm = (props) => {
         )}
         <br />
 
-        <button style={{ fontSize: 20 }}>{props.buttonLabel}</button>
+        <button style={{ fontSize: 20 }} className="login-button">
+          {props.buttonLabel}
+        </button>
       </form>
     </div>
   );

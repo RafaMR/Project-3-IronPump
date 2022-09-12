@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav>
+    <nav className="navbar">
       <Link className="navbtn" to="/">
         Home
       </Link>

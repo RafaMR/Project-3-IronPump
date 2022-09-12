@@ -33,7 +33,7 @@ const HomePage = () => {
   //);
 
   return (
-    <div>
+    <div className="home-page">
       {(user && (
         <>
           <h1> Part of the body you want to train</h1>
@@ -60,16 +60,19 @@ const HomePage = () => {
         </>
       )) || (
         <>
-          <span>Welcome to IronPump</span>
-          <ReactPlayer
-            //url="https://www.youtube.com/watch?v=vi1-4fcX_ig"
-            url={require('../video/test.mp4')}
-            width="100%"
-            height="100%"
-            playing
-            loop={true}
-            muted={true}
-          />
+          <div>
+            <span className="welcome-message">Welcome to IronPump</span>
+            <ReactPlayer
+              //url="https://www.youtube.com/watch?v=vi1-4fcX_ig"
+              url={require('../video/test.mp4')}
+              width="100%"
+              height="100%"
+              playing
+              loop={true}
+              muted={true}
+              className="home-video"
+            />
+          </div>
         </>
       )}
     </div>
@@ -77,18 +80,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
-// const [exercises, setExercises] = useState();
-
-// useEffect(() => {
-//   exerciseList().then((data) => setExercises(data.exercises));
-// }, [exercises]);
-
-// {
-//   /* {exercises &&
-//     exercises.map((exercise) => (
-//       <ul>
-//         <li key={exercise.id}>{exercise.name}</li>
-//       </ul>
-//   ))} */
-// }

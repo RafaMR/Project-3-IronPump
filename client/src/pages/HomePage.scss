@@ -6,6 +6,10 @@ div {
   color: black;
 }
 
+a {
+  text-decoration: none;
+}
+
 .grid {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
@@ -39,4 +43,29 @@ span {
 }
 img {
   object-fit: cover;
+}
+
+// Attempt for mobile-friendly styling
+$breakpointIPhone: 390px;
+
+@media screen and (max-width: $breakpointIPhone) {
+  body {
+    font-family: 'Roboto';
+    max-width: 390px;
+  }
+  a {
+    text-decoration: none;
+  }
+  .grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .welcome-message {
+    margin-top: 1em;
+    font-size: 40px;
+  }
+  video {
+    margin-top: 15em;
+    margin-bottom: auto;
+  }
 }

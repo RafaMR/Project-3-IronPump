@@ -1,96 +1,93 @@
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
+// *,
+// *:before,
+// *:after {
+//   box-sizing: inherit;
+// }
 
-* {
-  background-color: rgb(99, 184, 233);
-  color: black;
-}
+// * {
+//   background-color: rgb(99, 184, 233);
+//   color: black;
+// }
 
-html {
-  box-sizing: border-box;
-}
+// html {
+//   box-sizing: border-box;
+// }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto';
+  font-style: normal;
 }
 
-input[type='text'],
-input[type='number'],
-input[type='email'],
-input[type='password'],
-input[type='date'],
-input[type='picture'],
-textarea,
-select {
-  margin: 0.7rem;
-  width: 20rem;
-  height: 2rem;
-  border: none;
-  border-radius: 0.5rem;
-  background-color: #f8f8f8;
-  font-size: 1rem;
-  padding: 0.5rem;
-  color: #333;
-  // font: inherit;
-  // border: 1px solid #dadada;
-  // line-height: inherit;
-  // color: inherit;
-  // padding: 1rem;
-  // background: transparent;
-  // margin-bottom: 1rem;
-  // border-radius: 0.25rem;
-}
+// input[type='text'],
+// input[type='number'],
+// input[type='email'],
+// input[type='password'],
+// input[type='date'],
+// input[type='picture'],
+// textarea,
+// select {
+//   margin: 0.7rem;
+//   width: 20rem;
+//   height: 2rem;
+//   border: none;
+//   border-radius: 0.5rem;
+//   background-color: #f8f8f8;
+//   font-size: 1rem;
+//   padding: 0.5rem;
+//   color: #333;
+//   // font: inherit;
+//   // border: 1px solid #dadada;
+//   // line-height: inherit;
+//   // color: inherit;
+//   // padding: 1rem;
+//   // background: transparent;
+//   // margin-bottom: 1rem;
+//   // border-radius: 0.25rem;
+// }
 
-label {
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-  font-size: 1.5rem;
-}
+// label {
+//   margin-bottom: 0.5rem;
+//   font-weight: 600;
+//   font-size: 1.5rem;
+// }
 
-.btn {
-  display: inline-flex;
-}
+// .btn {
+//   display: inline-flex;
+// }
 
-button {
-  cursor: pointer;
-}
+// button {
+//   cursor: pointer;
+// }
 
-button,
-.btn {
-  border: 1px solid #dadada;
-  line-height: 20px;
-  font-size: 0.7em;
-  font-weight: bold;
-  color: rgb(255, 255, 255);
-  padding: 1rem;
-  background: rgb(76, 80, 80);
-  margin-bottom: 1rem;
-  border-radius: 1rem;
-}
+// button,
+// .btn {
+//   border: 1px solid #dadada;
+//   line-height: 20px;
+//   font-size: 0.7em;
+//   font-weight: bold;
+//   color: rgb(255, 255, 255);
+//   padding: 1rem;
+//   background: rgb(76, 80, 80);
+//   margin-bottom: 1rem;
+//   border-radius: 1rem;
+// }
 
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+// form {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+// a {
+//   color: inherit;
+//   text-decoration: none;
+// }
 
-img {
-  max-width: 100%;
-}
+// img {
+//   max-width: 100%;
+// }
 
-image {
-  max-width: 100%;
-}
+// image {
+//   max-width: 100%;
+// }

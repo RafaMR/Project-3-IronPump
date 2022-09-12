@@ -4,12 +4,16 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
+  font-family: 'Roboto';
+  color: black;
 }
-
+body {
+  background-color: rgb(99, 184, 233);
+}
 h2 {
   font-size: 60px;
   background-color: transparent;
-  color: rgb(255, 255, 255);
+
   font-weight: 900;
   font-style: oblique;
   text-decoration: solid;

@@ -100,11 +100,7 @@ const WorkoutAddPage = () => {
         selectedExercises={selectedExercises}
         onAddSelectedExercise={setSelectedExercises}
       />
-      <button
-        onClick={handlePrevious}
-        style={{ marginRight: 30 }}
-        className="bodypart-button"
-      >
+      <button onClick={handlePrevious} className="bodypart-button">
         Previous
       </button>
       <button onClick={handleNext} className="bodypart-button">
