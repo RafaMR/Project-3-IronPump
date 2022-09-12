@@ -128,8 +128,4 @@ const Newnav = () => {
   );
 };
 
-{
-  /* <FontAwesomeIcon icon="fa-solid fa-bars" /> */
-}
-
 export default Newnav;
