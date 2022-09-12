@@ -17,20 +17,6 @@ router.get('/search', (req, res, next) => {
   });
 });
 
-router.get('/get-multiple-exercises', (req, res, next) => {
-  // ids is supposed to be an array
-  const { ids } = req.query;
-  const objectIds = ids.split(',');
-
-  Exercise.find({
-    _id: {
-      $in: objectIds
-    }
-  })
-    .then((exercises) => res.json({ exercises }))
-    .catch((err) => next(err));
-});
-
 router.get('/list', (req, res, next) => {
   Exercise.find((exercises) => {
     res.json({ exercises: exerciseList });

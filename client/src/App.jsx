@@ -4,26 +4,20 @@ import { useEffect, useState } from 'react';
 import HomePage from './pages/HomePage';
 import RegisterPage from './pages/RegisterPage';
 import LogInPage from './pages/LogInPage';
-import ProfileSearchPage from './pages/ProfileSearchPage';
 import ProfilePage from './pages/ProfilePage';
 import ProfileEditPage from './pages/ProfileEditPage';
 
-import Navbar from './components/Navbar';
 import AuthenticationContext from './context/authentication';
 import { loadUserInformation } from './services/authentication';
-//import { getAllExercises } from './services/api';
-//import ExercisesList from './components/ExercisesList';
+
 import BodyPartPage from './pages/BodyPartPage';
 import SingleExercisePage from './pages/SingleExercisePage';
 import WorkoutAddPage from './pages/WorkoutAddPage';
 import AllWorkoutsPage from './pages/AllWorkoutsPage';
 import SingleWorkoutPage from './pages/SingleWorkoutPage';
-import WorkoutForm from './components/WorkoutForm';
 import Newnav from './components/Newnav';
 
 const App = () => {
-  //const [exercises, setExercises] = useState([]);
-
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -32,16 +26,9 @@ const App = () => {
     });
   }, []);
 
-  ///useEffect(() => {
-  ///  getAllExercises().then((res) => {
-  ///    setExercises(res);
-  ///  });
-  ///}, []);
-
   return (
     <AuthenticationContext.Provider value={{ user, setUser }}>
       <BrowserRouter>
-        {/* <Navbar /> */}
         <Newnav />
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -49,7 +36,6 @@ const App = () => {
           <Route path="/exercise/id/:id" element={<SingleExercisePage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/log-in" element={<LogInPage />} />
-          <Route path="/profile/search" element={<ProfileSearchPage />} />
           <Route path="/profile/edit" element={<ProfileEditPage />} />
           <Route path="/profile/:id" element={<ProfilePage />} />
           <Route path="/workout" element={<WorkoutAddPage />} />
@@ -57,7 +43,6 @@ const App = () => {
           <Route path="/workout/:id" element={<SingleWorkoutPage />} />
         </Routes>
       </BrowserRouter>
-      {/* <ExercisesList exercises={exercises} /> */}
     </AuthenticationContext.Provider>
   );
 };

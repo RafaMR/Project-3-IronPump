@@ -1,12 +1,5 @@
 import { apiAuthentication } from './authentication';
 
-//workoutSearch -  GET to '/workout/search' - Allows user to search for workouts.
-
-export const workoutSearch = (filters) =>
-  apiAuthentication
-    .get(`/workout/search?${new URLSearchParams(filters).toString()}`)
-    .then((response) => response.data);
-
 //workoutsAll - GET to '/workout/all' - Loads all workouts available.
 
 export const workoutsAll = () =>
@@ -20,6 +13,7 @@ export const workoutLoad = (id) => {
     console.dir('WORKOUT', response.data);
     return response.data;
   });
+
   // If my workout objects looks like this:
   /* 
     { workout: 
