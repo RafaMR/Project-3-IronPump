@@ -15,6 +15,7 @@ const profileRouter = require('./routes/profile');
 const exerciseRouter = require('./routes/exercise');
 const workoutRouter = require('./routes/workout');
 const app = express();
+
 app.use(serveFavicon(path.join(__dirname, 'public/images', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(
