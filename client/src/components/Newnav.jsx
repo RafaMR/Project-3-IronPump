@@ -44,7 +44,7 @@ const Newnav = () => {
   return (
     <>
       <nav className="newnav">
-        <Link to="/" className="newnav-home">
+        <Link to="/" className="newnav-logo">
           IRONPUMP
         </Link>
         <div className="menu-icon" onClick={handleClick}>

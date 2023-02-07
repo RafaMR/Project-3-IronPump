@@ -14,6 +14,7 @@
   cursor: pointer;
   text-decoration: none;
   font-size: 2rem;
+  font-weight: bold;
 }
 
 .fa-firstdraft {
@@ -35,7 +36,9 @@
 .nav-item {
   display: flex;
   align-items: center;
-  height: 80px;
+  height: 90px;
+  margin-top: 50px;
+  font-size: 1.5rem;
 }
 
 .nav-links {

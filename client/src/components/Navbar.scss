@@ -1,61 +1,61 @@
-@media screen and (min-width: 390px) {
-  nav {
-    background-color: rgb(172, 184, 203);
-    font-size: 1.5em;
-    display: flex;
-    padding: 1em 3em 0em 3em;
-    a,
-    button {
-      &:not(:last-child) {
-        margin-right: 1em;
-      }
-      &:first-child {
-        margin-right: auto;
-      }
-    }
-  }
+// @media screen and (min-width: 390px) {
+//   nav {
+//     background-color: rgb(172, 184, 203);
+//     font-size: 1.5em;
+//     display: flex;
+//     padding: 1em 3em 0em 3em;
+//     a,
+//     button {
+//       &:not(:last-child) {
+//         margin-right: 1em;
+//       }
+//       &:first-child {
+//         margin-right: auto;
+//       }
+//     }
+//   }
 
-  .navbtn {
-    border: 1px solid #dadada;
-    line-height: 20px;
-    font-size: 0.7em;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-    padding: 1rem;
-    background: rgb(76, 80, 80);
-    margin-bottom: 1rem;
-    border-radius: 1rem;
-    //width: 20rem;
-    //height: 2rem;
-  }
+.navbtn {
+  border: 1px solid #dadada;
+  line-height: 20px;
+  font-size: 0.7em;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  padding: 1rem;
+  background: rgb(76, 80, 80);
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  //width: 20rem;
+  //height: 2rem;
 }
+// }
 
 // Attempt for mobile-friendly styling
-$breakpointIPhone: 390px;
+//$breakpointIPhone: 390px;
 
-@media screen and (max-width: $breakpointIPhone) {
-  .navbar {
-    display: flex;
-    flex-direction: row;
-    align-content: space-between;
+//@media screen and (max-width: $breakpointIPhone) {
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
 
-    font-family: 'Roboto', sans-serif;
-    line-height: 20px;
-    font-size: 1.5em;
-    font-weight: bold;
-  }
-
-  .navbtn {
-    border: 1px solid #dadada;
-    margin-right: 2em;
-    margin-left: 1em;
-    line-height: 20px;
-    font-size: 0.7em;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-    padding: 1rem;
-    background: rgb(76, 80, 80);
-    margin: 1em;
-    border-radius: 1rem;
-  }
+  font-family: 'Roboto', sans-serif;
+  line-height: 20px;
+  font-size: 1.5em;
+  font-weight: bold;
 }
+
+// .navbtn {
+//   border: 1px solid #dadada;
+//   margin-right: 2em;
+//   margin-left: 1em;
+//   line-height: 20px;
+//   font-size: 0.7em;
+//   font-weight: bold;
+//   color: rgb(255, 255, 255);
+//   padding: 1rem;
+//   background: rgb(76, 80, 80);
+//   margin: 1em;
+//   border-radius: 1rem;
+// }
+// //}
