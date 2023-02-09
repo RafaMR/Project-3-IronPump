@@ -45,9 +45,9 @@ const BodyPartPage = () => {
               part.map((exercises, index) => {
                 return (
                   <Link key={index} to={`/exercise/id/${exercises._id}`}>
-                    <h6 style={{ fontSize: 30 }}>
+                    <h1 style={{ fontSize: 30 }}>
                       {capitalizeFirstLowercaseRest(exercises.name)}
-                    </h6>
+                    </h1>
 
                     <img src={exercises.gifUrl} alt={exercises.name} />
                   </Link>

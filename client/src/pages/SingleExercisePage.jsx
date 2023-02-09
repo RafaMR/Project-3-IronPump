@@ -23,8 +23,10 @@ const SingleExercisePage = () => {
             <>
               <h1>{capitalizeFirstLowercaseRest(exercise.name)}</h1>
               <img src={exercise.gifUrl} alt={exercise.name} />
-              <h2>Target: {capitalizeFirstLowercaseRest(exercise.target)}</h2>
-              <h2>
+              <h2 style={{ color: 'whitesmoke' }}>
+                Target: {capitalizeFirstLowercaseRest(exercise.target)}
+              </h2>
+              <h2 style={{ color: 'whitesmoke' }}>
                 Body Part: {capitalizeFirstLowercaseRest(exercise.bodyPart)}
               </h2>
             </>

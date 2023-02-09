@@ -58,7 +58,11 @@ const SingleWorkoutPage = () => {
                 );
               })}
           </div>
-          <button onClick={handleWorkoutDeletion} style={{ fontSize: 30 }}>
+          <button
+            className="delete-button"
+            onClick={handleWorkoutDeletion}
+            style={{ fontSize: 30 }}
+          >
             Delete Workout
           </button>
         </>

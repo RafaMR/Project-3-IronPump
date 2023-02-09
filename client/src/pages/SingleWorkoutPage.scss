@@ -38,3 +38,24 @@ h1 {
   text-decoration: solid;
   margin-top: 0.5em;
 }
+
+h3,
+h5 {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  margin-bottom: 5%;
+  font-weight: 900;
+}
+
+.delete-button {
+  border: 1px solid #dadada;
+  line-height: 15px;
+  font-size: 1em;
+  font-weight: 900;
+  color: rgb(6, 5, 5);
+  padding: 0.8rem;
+  background: rgb(213, 61, 61);
+  margin: 0rem 0rem 1rem 2rem;
+  border-radius: 3rem;
+  width: 20%;
+}

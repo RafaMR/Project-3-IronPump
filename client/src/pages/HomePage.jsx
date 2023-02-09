@@ -36,7 +36,7 @@ const HomePage = () => {
     <div className="home-page">
       {(user && (
         <>
-          <h1> Part of the body you want to train</h1>
+          <h1>Trainning</h1>
 
           <div className="grid">
             {bodyParts &&
